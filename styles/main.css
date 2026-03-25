@@ -143,10 +143,12 @@ body {
   margin-bottom: 14px;
 }
 .p-name {
-  font-family: 'Fraunces', serif !important;
+  /* font-family: 'Fraunces', serif !important; */
+  /* font-style: italic !important; */
+  font-family: 'DM Sans', sans-serif !important;
+  font-style: normal !important;
   font-size: 3.4rem !important;
   font-weight: 300 !important;
-  font-style: italic !important;
   color: var(--text) !important;
   letter-spacing: -0.02em !important;
   line-height: 1.05 !important;
