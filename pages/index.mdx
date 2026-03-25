@@ -12,7 +12,7 @@ title: " "
       <a href="https://www.linkedin.com/in/madhosh/" target="_blank">LinkedIn</a>
       <a href="https://gitlab.madhoshyagnik.space" target="_blank">GitLab</a>
     </div>
-    <button className="p-theme-toggle" id="themeToggle" aria-label="Toggle theme" onClick={() => { const r = document.getElementById('theme-root'); const b = document.getElementById('themeToggle'); if (r.classList.contains('theme-light')) { r.classList.replace('theme-light','theme-dark'); b.textContent='☀'; } else { r.classList.replace('theme-dark','theme-light'); b.textContent='☾'; } }}>☾</button>
+    <button className="p-theme-toggle" id="themeToggle" aria-label="Toggle theme" onClick={() => { const r = document.getElementById('theme-root'); const b = document.getElementById('themeToggle'); if (r.classList.contains('theme-light')) { r.classList.replace('theme-light','theme-dark'); b.textContent='Light mode'; } else { r.classList.replace('theme-dark','theme-light'); b.textContent='Dark mode'; } }}>Dark mode</button>
   </div>
 </div>
 
@@ -20,6 +20,7 @@ title: " "
   <div className="p-hero-left">
     <div className="p-eyebrow">DevOps Engineer</div>
     <h1 className="p-name">Madhosh Yagnik</h1>
+    <div className="p-name-rule"></div>
     <p className="p-desc">Production infrastructure across AWS and Azure — IaC migrations, CI/CD pipelines, and automation that replaces slow manual work. I care about systems that are reliable, cost-efficient, and easy for the next person to understand.</p>
     <div className="p-stats">
       <div className="p-stat">
@@ -46,16 +47,16 @@ title: " "
       <span className="p-term-title">madhosh ~ whoami</span>
     </div>
     <div className="p-term-body">
-      <div className="p-term-line"><span className="t-prompt">$</span><span className="t-cmd"> cat profile.json</span></div>
-      <div className="p-term-line t-out"><span className="t-key">cloud</span><span className="t-val">AWS · Azure · GCP</span></div>
-      <div className="p-term-line t-out"><span className="t-key">iac</span><span className="t-val">Terraform + Terraform Cloud</span></div>
-      <div className="p-term-line t-out"><span className="t-key">containers</span><span className="t-val">Docker · Podman · Compose</span></div>
-      <div className="p-term-line t-out"><span className="t-key">cicd</span><span className="t-val">GitLab CI · Azure DevOps · GH Actions</span></div>
-      <div className="p-term-line t-out"><span className="t-key">scripting</span><span className="t-val">Bash · Python</span></div>
-      <div className="p-term-line t-out"><span className="t-key">systems</span><span className="t-val">Linux · NGINX · systemd</span></div>
-      <div className="p-term-line t-out"><span className="t-key">self-hosted</span><span className="t-val">GitLab on personal hardware</span></div>
-      <div className="p-term-line t-out"><span className="t-key">status</span><span className="t-green">open to new work ✓</span></div>
-      <div className="p-term-line"><span className="t-prompt">$</span><span className="t-cursor"> ▌</span></div>
+      <div className="p-term-line tl-1"><span className="t-prompt">$</span><span className="t-cmd"> cat profile.json</span></div>
+      <div className="p-term-line t-out tl-2"><span className="t-key">cloud</span><span className="t-val">AWS · Azure · GCP</span></div>
+      <div className="p-term-line t-out tl-3"><span className="t-key">iac</span><span className="t-val">Terraform + Terraform Cloud</span></div>
+      <div className="p-term-line t-out tl-4"><span className="t-key">containers</span><span className="t-val">Docker · Podman · Compose</span></div>
+      <div className="p-term-line t-out tl-5"><span className="t-key">cicd</span><span className="t-val">GitLab CI · Azure DevOps · GH Actions</span></div>
+      <div className="p-term-line t-out tl-6"><span className="t-key">scripting</span><span className="t-val">Bash · Python</span></div>
+      <div className="p-term-line t-out tl-7"><span className="t-key">systems</span><span className="t-val">Linux · NGINX · systemd</span></div>
+      <div className="p-term-line t-out tl-8"><span className="t-key">self-hosted</span><span className="t-val">GitLab on personal hardware</span></div>
+      <div className="p-term-line t-out tl-9"><span className="t-key">status</span><span className="t-green">open to new work ✓</span></div>
+      <div className="p-term-line tl-10"><span className="t-prompt">$</span><span className="t-cursor"> ▌</span></div>
     </div>
   </div>
 </div>
@@ -76,17 +77,19 @@ title: " "
         <span className="p-work-chevron">›</span>
       </summary>
       <div className="p-work-body">
-        <div className="p-work-meta">Oct 2024 — Mar 2025 · Singapore-based bank</div>
-        <p className="p-work-desc">Designed and delivered multiple DR and infrastructure automation solutions for a production banking environment. Every decision was weighed against cost.</p>
-        <ul className="p-work-bullets">
-          <li>Migrated Bastion servers from CentOS 7 (EOL) to Ubuntu 24.04 LTS with no service disruption. Rewrote the setup guide for Debian and YUM-based distros.</li>
-          <li>Built a cost-effective DR system: EventBridge + Lambda for automated RDS snapshots, cross-region copy, and health-monitored auto-recovery if primary failed.</li>
-          <li>Developed a parallel EC2 DR solution with AMI rotation, cross-region copy, auto-launch on health check failure, and SNS alerting.</li>
-          <li>Evaluated AWS Read Replicas and DMS; excluded both on cost grounds after full POC — documented the decision with analysis.</li>
-          <li>Resolved urgent Bitbucket pipeline failures and stabilised CI/CD long-term.</li>
-          <li>Recovered access to a Windows EC2 instance after the private key was lost.</li>
-        </ul>
-        <div className="p-work-impact">↑ Multiple automated DR paths · Cost-justified throughout</div>
+        <div className="p-work-body-inner">
+          <div className="p-work-meta">Oct 2024 — Mar 2025 · Singapore-based bank</div>
+          <p className="p-work-desc">Designed and delivered multiple DR and infrastructure automation solutions for a production banking environment. Every decision was weighed against cost.</p>
+          <ul className="p-work-bullets">
+            <li>Migrated Bastion servers from CentOS 7 (EOL) to Ubuntu 24.04 LTS with no service disruption. Rewrote the setup guide for Debian and YUM-based distros.</li>
+            <li>Built a cost-effective DR system: EventBridge + Lambda for automated RDS snapshots, cross-region copy, and health-monitored auto-recovery if primary failed.</li>
+            <li>Developed a parallel EC2 DR solution with AMI rotation, cross-region copy, auto-launch on health check failure, and SNS alerting.</li>
+            <li>Evaluated AWS Read Replicas and DMS; excluded both on cost grounds after full POC — documented the decision with analysis.</li>
+            <li>Resolved urgent Bitbucket pipeline failures and stabilised CI/CD long-term.</li>
+            <li>Recovered access to a Windows EC2 instance after the private key was lost.</li>
+          </ul>
+          <div className="p-work-impact">↑ Multiple automated DR paths · Cost-justified throughout</div>
+        </div>
       </div>
     </details>
 
@@ -98,13 +101,15 @@ title: " "
         <span className="p-work-chevron">›</span>
       </summary>
       <div className="p-work-body">
-        <div className="p-work-meta">Dec 2024 — Jan 2025 · Contract</div>
-        <p className="p-work-desc">Cleared a backlog of 72 DevOps tasks across Docker, Linux, Git, Makefile, and CMake — 64 accepted on first review.</p>
-        <ul className="p-work-bullets">
-          <li>Picked up CMake and Makefile tasks while learning both tools in parallel — no blocked work or delays.</li>
-          <li>Daily stand-up transparency with clear progress tracking throughout.</li>
-        </ul>
-        <div className="p-work-impact">↑ 64 / 72 tasks accepted · Full delivery satisfaction</div>
+        <div className="p-work-body-inner">
+          <div className="p-work-meta">Dec 2024 — Jan 2025 · Contract</div>
+          <p className="p-work-desc">Cleared a backlog of 72 DevOps tasks across Docker, Linux, Git, Makefile, and CMake — 64 accepted on first review.</p>
+          <ul className="p-work-bullets">
+            <li>Picked up CMake and Makefile tasks while learning both tools in parallel — no blocked work or delays.</li>
+            <li>Daily stand-up transparency with clear progress tracking throughout.</li>
+          </ul>
+          <div className="p-work-impact">↑ 64 / 72 tasks accepted · Full delivery satisfaction</div>
+        </div>
       </div>
     </details>
 
@@ -116,16 +121,18 @@ title: " "
         <span className="p-work-chevron">›</span>
       </summary>
       <div className="p-work-body">
-        <div className="p-work-meta">Feb 2025 — Mar 2025 · Primary DevOps resource</div>
-        <p className="p-work-desc">Took a project running entirely on local setups and brought it to a production-ready Azure deployment in one month.</p>
-        <ul className="p-work-bullets">
-          <li>Migrated full stack to Azure Cloud, resolving routing and network configuration issues along the way.</li>
-          <li>Iterated CI/CD across three approaches — GitHub Actions, Azure DevOps via SSH, and finally an Azure agent-based pipeline with client-approved security controls.</li>
-          <li>Optimised the frontend Dockerfile to serve static files — load time dropped from seconds to milliseconds.</li>
-          <li>Dockerized all services; created Compose stacks for consistent local and cloud environments.</li>
-          <li>Added systemd services and cron jobs for self-starting apps at VM boot.</li>
-        </ul>
-        <div className="p-work-impact">↑ Zero-to-cloud in one month · Load time: seconds → milliseconds</div>
+        <div className="p-work-body-inner">
+          <div className="p-work-meta">Feb 2025 — Mar 2025 · Primary DevOps resource</div>
+          <p className="p-work-desc">Took a project running entirely on local setups and brought it to a production-ready Azure deployment in one month.</p>
+          <ul className="p-work-bullets">
+            <li>Migrated full stack to Azure Cloud, resolving routing and network configuration issues along the way.</li>
+            <li>Iterated CI/CD across three approaches — GitHub Actions, Azure DevOps via SSH, and finally an Azure agent-based pipeline with client-approved security controls.</li>
+            <li>Optimised the frontend Dockerfile to serve static files — load time dropped from seconds to milliseconds.</li>
+            <li>Dockerized all services; created Compose stacks for consistent local and cloud environments.</li>
+            <li>Added systemd services and cron jobs for self-starting apps at VM boot.</li>
+          </ul>
+          <div className="p-work-impact">↑ Zero-to-cloud in one month · Load time: seconds → milliseconds</div>
+        </div>
       </div>
     </details>
 
@@ -137,16 +144,18 @@ title: " "
         <span className="p-work-chevron">›</span>
       </summary>
       <div className="p-work-body">
-        <div className="p-work-meta">Mar 2025 — Aug 2025 · Primary DevOps</div>
-        <p className="p-work-desc">Inherited a production AWS environment with no IaC, no state management, and known security gaps. Left it fully Terraform-managed, secured, and cheaper to run.</p>
-        <ul className="p-work-bullets">
-          <li>Migrated all AWS resources to Terraform with Terraform Cloud for remote state and environment isolation. Negligible downtime during migration.</li>
-          <li>Partnered with the security team to audit past incidents and implement preventive IAM controls.</li>
-          <li>Reduced monthly AWS spend by ~$95–100 via right-sizing and cleanup.</li>
-          <li>Moved the on-prem chatbot server from the office to the server room — eliminated recurring accidental disconnections.</li>
-          <li>Delivered a complete handover; incoming engineer appreciated the thoroughness.</li>
-        </ul>
-        <div className="p-work-impact">↑ ~$100/month saved · Zero config drift · Clean security posture</div>
+        <div className="p-work-body-inner">
+          <div className="p-work-meta">Mar 2025 — Aug 2025 · Primary DevOps</div>
+          <p className="p-work-desc">Inherited a production AWS environment with no IaC, no state management, and known security gaps. Left it fully Terraform-managed, secured, and cheaper to run.</p>
+          <ul className="p-work-bullets">
+            <li>Migrated all AWS resources to Terraform with Terraform Cloud for remote state and environment isolation. Negligible downtime during migration.</li>
+            <li>Partnered with the security team to audit past incidents and implement preventive IAM controls.</li>
+            <li>Reduced monthly AWS spend by ~$95–100 via right-sizing and cleanup.</li>
+            <li>Moved the on-prem chatbot server from the office to the server room — eliminated recurring accidental disconnections.</li>
+            <li>Delivered a complete handover; incoming engineer appreciated the thoroughness.</li>
+          </ul>
+          <div className="p-work-impact">↑ ~$100/month saved · Zero config drift · Clean security posture</div>
+        </div>
       </div>
     </details>
 
@@ -158,13 +167,15 @@ title: " "
         <span className="p-work-chevron">›</span>
       </summary>
       <div className="p-work-body">
-        <div className="p-work-meta">Apr 2025 · Short contract</div>
-        <p className="p-work-desc">Client was paying for daily automated RDS backups on a staging environment that didn't need them. Replaced the default behaviour with a purpose-built, native solution.</p>
-        <ul className="p-work-bullets">
-          <li>Disabled built-in backups; implemented monthly snapshot Lambda and quarterly cleanup Lambda retaining the latest snapshot.</li>
-          <li>Scheduled via EventBridge with SNS alerts. Wrote complete manual recovery documentation.</li>
-        </ul>
-        <div className="p-work-impact">↑ Meaningful cost reduction · Simpler, auditable backup workflow</div>
+        <div className="p-work-body-inner">
+          <div className="p-work-meta">Apr 2025 · Short contract</div>
+          <p className="p-work-desc">Client was paying for daily automated RDS backups on a staging environment that did not need them. Replaced the default behaviour with a purpose-built, native solution.</p>
+          <ul className="p-work-bullets">
+            <li>Disabled built-in backups; implemented monthly snapshot Lambda and quarterly cleanup Lambda retaining the latest snapshot.</li>
+            <li>Scheduled via EventBridge with SNS alerts. Wrote complete manual recovery documentation.</li>
+          </ul>
+          <div className="p-work-impact">↑ Meaningful cost reduction · Simpler, auditable backup workflow</div>
+        </div>
       </div>
     </details>
 
@@ -176,14 +187,16 @@ title: " "
         <span className="p-work-chevron">›</span>
       </summary>
       <div className="p-work-body">
-        <div className="p-work-meta">Apr 2025 — Ongoing · Two products, Israel-hosted</div>
-        <p className="p-work-desc">Ongoing management of production and staging for two separate products. Minimal setup, stable operations.</p>
-        <ul className="p-work-bullets">
-          <li>Manage deployments and NGINX configurations; coordinate with hosting provider for system-level updates.</li>
-          <li>Resolved CORS and React routing issues from misconfigured NGINX paths.</li>
-          <li>Replaced Git token-based deployment with SSH deploy keys — documented in a one-page team guide, adopted on a separate Azure project for consistency.</li>
-        </ul>
-        <div className="p-work-impact">↑ Stable ops · Improved deployment security · Standardised across projects</div>
+        <div className="p-work-body-inner">
+          <div className="p-work-meta">Apr 2025 — Ongoing · Two products, Israel-hosted</div>
+          <p className="p-work-desc">Ongoing management of production and staging for two separate products. Minimal setup, stable operations.</p>
+          <ul className="p-work-bullets">
+            <li>Manage deployments and NGINX configurations; coordinate with hosting provider for system-level updates.</li>
+            <li>Resolved CORS and React routing issues from misconfigured NGINX paths.</li>
+            <li>Replaced Git token-based deployment with SSH deploy keys — documented in a one-page team guide, adopted on a separate Azure project for consistency.</li>
+          </ul>
+          <div className="p-work-impact">↑ Stable ops · Improved deployment security · Standardised across projects</div>
+        </div>
       </div>
     </details>
 
@@ -195,16 +208,18 @@ title: " "
         <span className="p-work-chevron">›</span>
       </summary>
       <div className="p-work-body">
-        <div className="p-work-meta">Apr 2025 — Ongoing</div>
-        <p className="p-work-desc">Picked up a production chatbot platform mid-incident — expired SSL, broken auto-renewal, and a domain blocked by a major social platform.</p>
-        <ul className="p-work-bullets">
-          <li>Diagnosed and fixed the failed auto-renewal mechanism; renewed certificates.</li>
-          <li>Resolved a domain blockage that had disrupted chatbot operations.</li>
-          <li>Set up a temporary subdomain for business continuity; decommissioned cleanly after the main domain stabilised.</li>
-          <li>Managed full domain transition to a new subdomain, updating backend and dependent service configurations.</li>
-          <li>Upcoming: scoping migration of chatbot logic from AWS to client's own GCP VM.</li>
-        </ul>
-        <div className="p-work-impact">↑ Production restored with minimal downtime · Client appreciation received</div>
+        <div className="p-work-body-inner">
+          <div className="p-work-meta">Apr 2025 — Ongoing</div>
+          <p className="p-work-desc">Picked up a production chatbot platform mid-incident — expired SSL, broken auto-renewal, and a domain blocked by a major social platform.</p>
+          <ul className="p-work-bullets">
+            <li>Diagnosed and fixed the failed auto-renewal mechanism; renewed certificates.</li>
+            <li>Resolved a domain blockage that had disrupted chatbot operations.</li>
+            <li>Set up a temporary subdomain for business continuity; decommissioned cleanly after the main domain stabilised.</li>
+            <li>Managed full domain transition to a new subdomain, updating backend and dependent service configurations.</li>
+            <li>Upcoming: scoping migration of chatbot logic from AWS to client's own GCP VM.</li>
+          </ul>
+          <div className="p-work-impact">↑ Production restored with minimal downtime · Client appreciation received</div>
+        </div>
       </div>
     </details>
 
@@ -216,16 +231,18 @@ title: " "
         <span className="p-work-chevron">›</span>
       </summary>
       <div className="p-work-body">
-        <div className="p-work-meta">Apr 2025 — Ongoing · Confidential client</div>
-        <p className="p-work-desc">Working across two internal projects — a completed OpenShift plugin platform and an ongoing lab provisioning system used by around 1000 engineers.</p>
-        <ul className="p-work-bullets">
-          <li>Contributed to a monorepo-based solution enabling consistent developer deployments across internal teams.</li>
-          <li>Implemented GitLab CI pipelines for linting, SonarQube scanning, and container image build/release automation. Supported plugin releases from v0.0.2 to v0.0.24 — stable with minimal maintenance since.</li>
-          <li>Actively migrating RHEL7 Lab Controllers to RHEL9 as part of a vulnerability remediation effort.</li>
-          <li>Automated VPN connection setup — removed manual OTP and credential steps, now single-click.</li>
-          <li>Built a parallel bash script to recover machines marked "Broken" using xargs: fetches a live list from the UI, confirms with the user, processes in parallel. Reduced lookup time from ~1 hour to a few minutes. This operation had been manual for over a decade.</li>
-        </ul>
-        <div className="p-work-impact">↑ Stable infra for ~1000 engineers · Broken-machine recovery: ~1 hr → minutes</div>
+        <div className="p-work-body-inner">
+          <div className="p-work-meta">Apr 2025 — Ongoing · Confidential client</div>
+          <p className="p-work-desc">Working across two internal projects — a completed OpenShift plugin platform and an ongoing lab provisioning system used by around 1000 engineers.</p>
+          <ul className="p-work-bullets">
+            <li>Contributed to a monorepo-based solution enabling consistent developer deployments across internal teams.</li>
+            <li>Implemented GitLab CI pipelines for linting, SonarQube scanning, and container image build/release automation. Supported plugin releases from v0.0.2 to v0.0.24 — stable with minimal maintenance since.</li>
+            <li>Actively migrating RHEL7 Lab Controllers to RHEL9 as part of a vulnerability remediation effort.</li>
+            <li>Automated VPN connection setup — removed manual OTP and credential steps, now single-click.</li>
+            <li>Built a parallel bash script to recover machines marked "Broken" using xargs: fetches a live list from the UI, confirms with the user, processes in parallel. Reduced lookup time from ~1 hour to a few minutes. This operation had been manual for over a decade.</li>
+          </ul>
+          <div className="p-work-impact">↑ Stable infra for ~1000 engineers · Broken-machine recovery: ~1 hr → minutes</div>
+        </div>
       </div>
     </details>
 
