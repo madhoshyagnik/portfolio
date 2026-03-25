@@ -2,366 +2,394 @@
 title: " "
 ---
 
-<div className="topbar">
-  <span className="topbar-name">Madhosh Yagnik</span>
-  <div className="topbar-links">
-    <a href="https://github.com/MadhoshYagnik" target="_blank">GitHub</a>
-    <a href="https://www.linkedin.com/in/madhosh/" target="_blank">LinkedIn</a>
-    <a href="https://gitlab.madhoshyagnik.space" target="_blank">GitLab</a>
+<div id="theme-root" className="theme-light">
+
+{/* ── TOPBAR ── */}
+<div className="p-topbar">
+  <span className="p-topbar-name">Madhosh Yagnik</span>
+  <div className="p-topbar-right">
+    <div className="p-topbar-links">
+      <a href="https://github.com/MadhoshYagnik" target="_blank">GitHub</a>
+      <a href="https://www.linkedin.com/in/madhosh/" target="_blank">LinkedIn</a>
+      <a href="https://gitlab.madhoshyagnik.space" target="_blank">GitLab</a>
+    </div>
+    <button className="p-theme-toggle" id="themeToggle" aria-label="Toggle theme" onclick="(function(){var r=document.getElementById('theme-root');var b=document.getElementById('themeToggle');if(r.classList.contains('theme-light')){r.classList.replace('theme-light','theme-dark');b.textContent='☀';}else{r.classList.replace('theme-dark','theme-light');b.textContent='☾';}})()">☾</button>
   </div>
 </div>
 
-<div className="hero">
-  <h1 className="hero-name">Madhosh Yagnik</h1>
-  <div className="hero-role">DevOps Engineer · Cloud Infrastructure · Automation</div>
-  <p className="hero-desc">
-    I work on production infrastructure — AWS and Azure, IaC migrations, CI/CD pipelines,
-    and automation that replaces slow manual processes. I care about systems that are reliable,
-    cost-efficient, and easy for the next person to understand.
-  </p>
-  <div className="hero-stats">
-    <div className="stat">
-      <div className="stat-num">8+</div>
-      <div className="stat-label">projects shipped</div>
+{/* ── HERO ── */}
+<div className="p-hero">
+  <div className="p-hero-left">
+    <div className="p-eyebrow">DevOps Engineer</div>
+    <h1 className="p-name">Madhosh Yagnik</h1>
+    <p className="p-desc">
+      Production infrastructure across AWS and Azure — IaC migrations, CI/CD pipelines,
+      and automation that replaces slow manual work. I care about systems that are reliable,
+      cost-efficient, and easy for the next person to understand.
+    </p>
+    <div className="p-stats">
+      <div className="p-stat">
+        <span className="p-stat-num">8+</span>
+        <span className="p-stat-label">projects</span>
+      </div>
+      <div className="p-stat-divider"></div>
+      <div className="p-stat">
+        <span className="p-stat-num">~$100</span>
+        <span className="p-stat-label">saved / mo</span>
+      </div>
+      <div className="p-stat-divider"></div>
+      <div className="p-stat">
+        <span className="p-stat-num">1.5yr</span>
+        <span className="p-stat-label">production</span>
+      </div>
     </div>
-    <div className="stat">
-      <div className="stat-num">~$1000</div>
-      <div className="stat-label">monthly AWS savings</div>
+  </div>
+
+  {/* Terminal */}
+  <div className="p-terminal">
+    <div className="p-term-bar">
+      <span className="p-term-dot dot-red"></span>
+      <span className="p-term-dot dot-yellow"></span>
+      <span className="p-term-dot dot-green"></span>
+      <span className="p-term-title">madhosh ~ whoami</span>
     </div>
-    <div className="stat">
-      <div className="stat-num">1.5 yr</div>
-      <div className="stat-label">production experience</div>
+    <div className="p-term-body">
+      <div className="p-term-line"><span className="t-prompt">$</span> <span className="t-cmd">cat profile.json</span></div>
+      <div className="p-term-line t-out"><span className="t-key">cloud</span>       <span className="t-val">AWS · Azure · GCP</span></div>
+      <div className="p-term-line t-out"><span className="t-key">iac</span>         <span className="t-val">Terraform + Terraform Cloud</span></div>
+      <div className="p-term-line t-out"><span className="t-key">containers</span>  <span className="t-val">Docker · Podman · Compose</span></div>
+      <div className="p-term-line t-out"><span className="t-key">cicd</span>        <span className="t-val">GitLab CI · Azure DevOps · GH Actions</span></div>
+      <div className="p-term-line t-out"><span className="t-key">scripting</span>   <span className="t-val">Bash · Python</span></div>
+      <div className="p-term-line t-out"><span className="t-key">systems</span>     <span className="t-val">Linux · NGINX · systemd</span></div>
+      <div className="p-term-line t-out"><span className="t-key">self-hosted</span> <span className="t-val">GitLab on personal hardware</span></div>
+      <div className="p-term-line t-out"><span className="t-key">status</span>      <span className="t-val t-green">open to new work ✓</span></div>
+      <div className="p-term-line"><span className="t-prompt">$</span> <span className="t-cursor">▌</span></div>
     </div>
   </div>
 </div>
 
-<div className="section">
-  <div className="section-header">
-    <div className="section-title">At a glance</div>
-    <div className="section-line"></div>
+{/* ── WORK ── */}
+<div className="p-section">
+  <div className="p-section-header">
+    <span className="p-section-num">01</span>
+    <span className="p-section-title">Work</span>
+    <div className="p-section-line"></div>
   </div>
-  <div className="snapshot">
-    <div className="snap-row"><span className="snap-key">Primary cloud</span><span className="snap-val">AWS</span></div>
-    <div className="snap-row"><span className="snap-key">Secondary</span><span className="snap-val">Azure</span></div>
-    <div className="snap-row"><span className="snap-key">IaC</span><span className="snap-val">Terraform + Terraform Cloud</span></div>
-    <div className="snap-row"><span className="snap-key">Containers</span><span className="snap-val">Docker, Podman, Compose</span></div>
-    <div className="snap-row"><span className="snap-key">CI/CD</span><span className="snap-val">GitLab CI, Azure DevOps, GitHub Actions</span></div>
-    <div className="snap-row"><span className="snap-key">Scripting</span><span className="snap-val">Bash, Python</span></div>
-    <div className="snap-row"><span className="snap-key">Self-hosted</span><span className="snap-val">GitLab on personal hardware</span></div>
-    <div className="snap-row"><span className="snap-key">Status</span><span className="snap-val">Open to new work</span></div>
-  </div>
-</div>
 
-<div className="section">
-  <div className="section-header">
-    <div className="section-title">Work</div>
-    <div className="section-line"></div>
-  </div>
-  <div className="work-list">
+  <div className="p-work-list">
 
-    <details className="work-item">
-      <summary className="work-header">
-        <span className="work-index">01</span>
-        <span className="work-name">AWS Disaster Recovery &amp; Infrastructure Automation</span>
-        <span className="work-tag tag-aws">AWS</span>
-        <span className="work-chevron">▶</span>
+    <details className="p-work-item">
+      <summary className="p-work-summary">
+        <span className="p-work-idx">01</span>
+        <span className="p-work-name">AWS Disaster Recovery &amp; Infrastructure Automation</span>
+        <span className="p-work-tag tag-aws">AWS</span>
+        <span className="p-work-chevron">›</span>
       </summary>
-      <div className="work-body">
-        <div className="work-period">Oct 2024 — Mar 2025 · Singapore-based bank</div>
-        <p className="work-desc">Designed and delivered multiple DR and infrastructure automation solutions for a production banking environment. Every decision was weighed against cost.</p>
-        <ul className="work-bullets">
+      <div className="p-work-body">
+        <div className="p-work-meta">Oct 2024 — Mar 2025 · Singapore-based bank</div>
+        <p className="p-work-desc">Designed and delivered multiple DR and infrastructure automation solutions for a production banking environment. Every decision was weighed against cost.</p>
+        <ul className="p-work-bullets">
           <li>Migrated Bastion servers from CentOS 7 (EOL) to Ubuntu 24.04 LTS with no service disruption. Rewrote the setup guide for Debian and YUM-based distros.</li>
           <li>Built a cost-effective DR system: EventBridge + Lambda for automated RDS snapshots, cross-region copy, and health-monitored auto-recovery if primary failed.</li>
           <li>Developed a parallel EC2 DR solution with AMI rotation, cross-region copy, auto-launch on health check failure, and SNS alerting.</li>
-          <li>Evaluated AWS Read Replicas and DMS for live replication; excluded both on cost grounds after full POC — documented the decision with analysis.</li>
+          <li>Evaluated AWS Read Replicas and DMS; excluded both on cost grounds after full POC — documented the decision with analysis.</li>
           <li>Resolved urgent Bitbucket pipeline failures and stabilised CI/CD long-term.</li>
           <li>Recovered access to a Windows EC2 instance after the private key was lost.</li>
         </ul>
-        <div className="work-impact">Multiple automated DR paths · Cost-justified throughout</div>
+        <div className="p-work-impact">↑ Multiple automated DR paths · Cost-justified throughout</div>
       </div>
     </details>
 
-    <details className="work-item">
-      <summary className="work-header">
-        <span className="work-index">02</span>
-        <span className="work-name">DevOps Backlog — Docker, CMake, Makefile, Git, Linux</span>
-        <span className="work-tag tag-linux">Linux</span>
-        <span className="work-chevron">▶</span>
+    <details className="p-work-item">
+      <summary className="p-work-summary">
+        <span className="p-work-idx">02</span>
+        <span className="p-work-name">DevOps Backlog — Docker, CMake, Makefile, Git, Linux</span>
+        <span className="p-work-tag tag-linux">Linux</span>
+        <span className="p-work-chevron">›</span>
       </summary>
-      <div className="work-body">
-        <div className="work-period">Dec 2024 — Jan 2025 · Contract</div>
-        <p className="work-desc">Cleared a backlog of 72 DevOps tasks across Docker, Linux, Git, Makefile, and CMake — 64 accepted on first review.</p>
-        <ul className="work-bullets">
+      <div className="p-work-body">
+        <div className="p-work-meta">Dec 2024 — Jan 2025 · Contract</div>
+        <p className="p-work-desc">Cleared a backlog of 72 DevOps tasks across Docker, Linux, Git, Makefile, and CMake — 64 accepted on first review.</p>
+        <ul className="p-work-bullets">
           <li>Picked up CMake and Makefile tasks while learning both tools in parallel — no blocked work or delays.</li>
           <li>Daily stand-up transparency with clear progress tracking throughout.</li>
         </ul>
-        <div className="work-impact">64 / 72 tasks accepted · Full delivery satisfaction</div>
+        <div className="p-work-impact">↑ 64 / 72 tasks accepted · Full delivery satisfaction</div>
       </div>
     </details>
 
-    <details className="work-item">
-      <summary className="work-header">
-        <span className="work-index">03</span>
-        <span className="work-name">Full Azure Migration &amp; CI/CD Pipeline</span>
-        <span className="work-tag tag-azure">Azure</span>
-        <span className="work-chevron">▶</span>
+    <details className="p-work-item">
+      <summary className="p-work-summary">
+        <span className="p-work-idx">03</span>
+        <span className="p-work-name">Full Azure Migration &amp; CI/CD Pipeline</span>
+        <span className="p-work-tag tag-azure">Azure</span>
+        <span className="p-work-chevron">›</span>
       </summary>
-      <div className="work-body">
-        <div className="work-period">Feb 2025 — Mar 2025 · Primary DevOps resource</div>
-        <p className="work-desc">Took a project running entirely on local setups and brought it to a production-ready Azure deployment in one month.</p>
-        <ul className="work-bullets">
+      <div className="p-work-body">
+        <div className="p-work-meta">Feb 2025 — Mar 2025 · Primary DevOps resource</div>
+        <p className="p-work-desc">Took a project running entirely on local setups and brought it to a production-ready Azure deployment in one month.</p>
+        <ul className="p-work-bullets">
           <li>Migrated full stack to Azure Cloud, resolving routing and network configuration issues along the way.</li>
           <li>Iterated CI/CD across three approaches — GitHub Actions, Azure DevOps via SSH, and finally an Azure agent-based pipeline with client-approved security controls.</li>
           <li>Optimised the frontend Dockerfile to serve static files — load time dropped from seconds to milliseconds.</li>
           <li>Dockerized all services; created Compose stacks for consistent local and cloud environments.</li>
           <li>Added systemd services and cron jobs for self-starting apps at VM boot.</li>
         </ul>
-        <div className="work-impact">Zero-to-cloud in one month · Load time: seconds → milliseconds</div>
+        <div className="p-work-impact">↑ Zero-to-cloud in one month · Load time: seconds → milliseconds</div>
       </div>
     </details>
 
-    <details className="work-item">
-      <summary className="work-header">
-        <span className="work-index">04</span>
-        <span className="work-name">Terraform IaC Migration &amp; Cost Optimisation</span>
-        <span className="work-tag tag-aws">AWS</span>
-        <span className="work-chevron">▶</span>
+    <details className="p-work-item">
+      <summary className="p-work-summary">
+        <span className="p-work-idx">04</span>
+        <span className="p-work-name">Terraform IaC Migration &amp; Cost Optimisation</span>
+        <span className="p-work-tag tag-aws">AWS</span>
+        <span className="p-work-chevron">›</span>
       </summary>
-      <div className="work-body">
-        <div className="work-period">Mar 2025 — Aug 2025 · Primary DevOps</div>
-        <p className="work-desc">Inherited a production AWS environment with no IaC, no state management, and known security gaps. Left it fully Terraform-managed, secured, and cheaper to run.</p>
-        <ul className="work-bullets">
+      <div className="p-work-body">
+        <div className="p-work-meta">Mar 2025 — Aug 2025 · Primary DevOps</div>
+        <p className="p-work-desc">Inherited a production AWS environment with no IaC, no state management, and known security gaps. Left it fully Terraform-managed, secured, and cheaper to run.</p>
+        <ul className="p-work-bullets">
           <li>Migrated all AWS resources to Terraform with Terraform Cloud for remote state and environment isolation. Negligible downtime during migration.</li>
           <li>Partnered with the security team to audit past incidents and implement preventive IAM controls.</li>
           <li>Reduced monthly AWS spend by ~$95–100 via right-sizing and cleanup.</li>
           <li>Moved the on-prem chatbot server from the office to the server room — eliminated recurring accidental disconnections.</li>
           <li>Delivered a complete handover; incoming engineer appreciated the thoroughness.</li>
         </ul>
-        <div className="work-impact">~$100/month saved · Zero config drift · Clean security posture</div>
+        <div className="p-work-impact">↑ ~$100/month saved · Zero config drift · Clean security posture</div>
       </div>
     </details>
 
-    <details className="work-item">
-      <summary className="work-header">
-        <span className="work-index">05</span>
-        <span className="work-name">Lightweight RDS Backup Automation</span>
-        <span className="work-tag tag-aws">AWS</span>
-        <span className="work-chevron">▶</span>
+    <details className="p-work-item">
+      <summary className="p-work-summary">
+        <span className="p-work-idx">05</span>
+        <span className="p-work-name">Lightweight RDS Backup Automation</span>
+        <span className="p-work-tag tag-aws">AWS</span>
+        <span className="p-work-chevron">›</span>
       </summary>
-      <div className="work-body">
-        <div className="work-period">Apr 2025 · Short contract</div>
-        <p className="work-desc">Client was paying for daily automated RDS backups on a staging environment that didn't need them. Replaced the default behaviour with a purpose-built, native solution.</p>
-        <ul className="work-bullets">
+      <div className="p-work-body">
+        <div className="p-work-meta">Apr 2025 · Short contract</div>
+        <p className="p-work-desc">Client was paying for daily automated RDS backups on a staging environment that didn't need them. Replaced the default behaviour with a purpose-built, native solution.</p>
+        <ul className="p-work-bullets">
           <li>Disabled built-in backups; implemented monthly snapshot Lambda and quarterly cleanup Lambda retaining the latest snapshot.</li>
           <li>Scheduled via EventBridge with SNS alerts. Wrote complete manual recovery documentation.</li>
         </ul>
-        <div className="work-impact">Meaningful cost reduction · Simpler, auditable backup workflow</div>
+        <div className="p-work-impact">↑ Meaningful cost reduction · Simpler, auditable backup workflow</div>
       </div>
     </details>
 
-    <details className="work-item">
-      <summary className="work-header">
-        <span className="work-index">06</span>
-        <span className="work-name">Production Server Management &amp; Deployment Security</span>
-        <span className="work-tag tag-linux">Linux</span>
-        <span className="work-chevron">▶</span>
+    <details className="p-work-item">
+      <summary className="p-work-summary">
+        <span className="p-work-idx">06</span>
+        <span className="p-work-name">Production Server Management &amp; Deployment Security</span>
+        <span className="p-work-tag tag-linux">Linux</span>
+        <span className="p-work-chevron">›</span>
       </summary>
-      <div className="work-body">
-        <div className="work-period">Apr 2025 — Ongoing · Two products, Israel-hosted</div>
-        <p className="work-desc">Ongoing management of production and staging for two separate products. Minimal setup, stable operations.</p>
-        <ul className="work-bullets">
-          <li>Manage deployments and NGINX configurations across environments; coordinate with hosting provider for system-level updates.</li>
+      <div className="p-work-body">
+        <div className="p-work-meta">Apr 2025 — Ongoing · Two products, Israel-hosted</div>
+        <p className="p-work-desc">Ongoing management of production and staging for two separate products. Minimal setup, stable operations.</p>
+        <ul className="p-work-bullets">
+          <li>Manage deployments and NGINX configurations; coordinate with hosting provider for system-level updates.</li>
           <li>Resolved CORS and React routing issues from misconfigured NGINX paths.</li>
-          <li>Replaced Git token-based deployment with SSH deploy keys — documented in a one-page team guide and adopted on a separate Azure project for consistency.</li>
+          <li>Replaced Git token-based deployment with SSH deploy keys — documented in a one-page team guide, adopted on a separate Azure project for consistency.</li>
         </ul>
-        <div className="work-impact">Stable ops · Improved deployment security · Standardised across projects</div>
+        <div className="p-work-impact">↑ Stable ops · Improved deployment security · Standardised across projects</div>
       </div>
     </details>
 
-    <details className="work-item">
-      <summary className="work-header">
-        <span className="work-index">07</span>
-        <span className="work-name">SSL, DNS Recovery &amp; Chatbot Stabilisation</span>
-        <span className="work-tag tag-multi">AWS + DNS</span>
-        <span className="work-chevron">▶</span>
+    <details className="p-work-item">
+      <summary className="p-work-summary">
+        <span className="p-work-idx">07</span>
+        <span className="p-work-name">SSL, DNS Recovery &amp; Chatbot Stabilisation</span>
+        <span className="p-work-tag tag-multi">AWS + DNS</span>
+        <span className="p-work-chevron">›</span>
       </summary>
-      <div className="work-body">
-        <div className="work-period">Apr 2025 — Ongoing</div>
-        <p className="work-desc">Picked up a production chatbot platform mid-incident — expired SSL, broken auto-renewal, and a domain blocked by a major social platform.</p>
-        <ul className="work-bullets">
+      <div className="p-work-body">
+        <div className="p-work-meta">Apr 2025 — Ongoing</div>
+        <p className="p-work-desc">Picked up a production chatbot platform mid-incident — expired SSL, broken auto-renewal, and a domain blocked by a major social platform.</p>
+        <ul className="p-work-bullets">
           <li>Diagnosed and fixed the failed auto-renewal mechanism; renewed certificates.</li>
           <li>Resolved a domain blockage that had disrupted chatbot operations.</li>
           <li>Set up a temporary subdomain for business continuity; decommissioned cleanly after the main domain stabilised.</li>
           <li>Managed full domain transition to a new subdomain, updating backend and dependent service configurations.</li>
           <li>Upcoming: scoping migration of chatbot logic from AWS to client's own GCP VM.</li>
         </ul>
-        <div className="work-impact">Production restored with minimal downtime · Client appreciation received</div>
+        <div className="p-work-impact">↑ Production restored with minimal downtime · Client appreciation received</div>
       </div>
     </details>
 
-    <details className="work-item">
-      <summary className="work-header">
-        <span className="work-index">08</span>
-        <span className="work-name">OpenShift CI/CD &amp; Lab Automation — anonymous</span>
-        <span className="work-tag tag-rh">anonymous</span>
-        <span className="work-chevron">▶</span>
+    <details className="p-work-item">
+      <summary className="p-work-summary">
+        <span className="p-work-idx">08</span>
+        <span className="p-work-name">OpenShift CI/CD &amp; Lab Automation</span>
+        <span className="p-work-tag tag-anon">Confidential</span>
+        <span className="p-work-chevron">›</span>
       </summary>
-      <div className="work-body">
-        <div className="work-period">Apr 2025 — Ongoing · anonymous</div>
-        <p className="work-desc">Working across two internal anonymous projects — a completed OpenShift plugin platform and an ongoing provisioning system project.</p>
-        <ul className="work-bullets">
+      <div className="p-work-body">
+        <div className="p-work-meta">Apr 2025 — Ongoing · Confidential client</div>
+        <p className="p-work-desc">Working across two internal projects — a completed OpenShift plugin platform and an ongoing lab provisioning system used by ~1000 engineers.</p>
+        <ul className="p-work-bullets">
           <li>Contributed to a monorepo-based solution enabling consistent developer deployments across internal teams.</li>
-          <li>Implemented GitLab CI pipelines for linting, SonarQube scanning, and container image build/release automation. Supported plugin releases from v0.0.2 to v0.0.24 — pipeline stable with minimal maintenance since.</li>
+          <li>Implemented GitLab CI pipelines for linting, SonarQube scanning, and container image build/release automation. Supported plugin releases from v0.0.2 to v0.0.24 — stable with minimal maintenance since.</li>
           <li>Actively migrating RHEL7 Lab Controllers to RHEL9 as part of a vulnerability remediation effort.</li>
           <li>Automated VPN connection setup — removed manual OTP and credential steps, now single-click.</li>
-          <li>Built a parallel bash script to recover machines marked "Broken": fetches a live list from the UI, confirms with the user, processes in parallel. Reduced lookup time from ~1 hour to a few minutes using xargs. This operation used to be manual for more than a decade.</li>
+          <li>Built a parallel bash script to recover machines marked "Broken" using xargs: fetches a live list from the UI, confirms with the user, processes in parallel. Reduced lookup time from ~1 hour to a few minutes. This operation had been manual for over a decade.</li>
         </ul>
-        <div className="work-impact">Lab provisioning times reduced & stable infra for around a 1000 engineers who depend on it · Broken-machine recovery: ~1 hr → minutes</div>
+        <div className="p-work-impact">↑ Stable infra for ~1000 engineers · Broken-machine recovery: ~1 hr → minutes</div>
       </div>
     </details>
 
   </div>
 </div>
 
-<div className="section">
-  <div className="section-header">
-    <div className="section-title">Tools &amp; Stack</div>
-    <div className="section-line"></div>
+{/* ── STACK ── */}
+<div className="p-section">
+  <div className="p-section-header">
+    <span className="p-section-num">02</span>
+    <span className="p-section-title">Tools &amp; Stack</span>
+    <div className="p-section-line"></div>
   </div>
-  <div className="skills-grid">
-    <div className="skill-group">
-      <div className="skill-group-label">Cloud</div>
-      <div className="skill-tags">
-        <span className="skill-tag">AWS</span>
-        <span className="skill-tag">Azure</span>
-        <span className="skill-tag">GCP</span>
+  <div className="p-skills-grid">
+    <div className="p-skill-group">
+      <div className="p-skill-label">Cloud</div>
+      <div className="p-skill-tags">
+        <span className="p-skill-tag">AWS</span>
+        <span className="p-skill-tag">Azure</span>
+        <span className="p-skill-tag">GCP</span>
       </div>
     </div>
-    <div className="skill-group">
-      <div className="skill-group-label">IaC</div>
-      <div className="skill-tags">
-        <span className="skill-tag">Terraform</span>
-        <span className="skill-tag">Terraform Cloud</span>
-        <span className="skill-tag">Ansible</span>
-        <span className="skill-tag">Vagrant</span>
+    <div className="p-skill-group">
+      <div className="p-skill-label">IaC</div>
+      <div className="p-skill-tags">
+        <span className="p-skill-tag">Terraform</span>
+        <span className="p-skill-tag">Terraform Cloud</span>
+        <span className="p-skill-tag">Ansible</span>
+        <span className="p-skill-tag">Vagrant</span>
       </div>
     </div>
-    <div className="skill-group">
-      <div className="skill-group-label">Containers</div>
-      <div className="skill-tags">
-        <span className="skill-tag">Docker</span>
-        <span className="skill-tag">Podman</span>
-        <span className="skill-tag">Compose</span>
-        <span className="skill-tag">Kubernetes</span>
+    <div className="p-skill-group">
+      <div className="p-skill-label">Containers</div>
+      <div className="p-skill-tags">
+        <span className="p-skill-tag">Docker</span>
+        <span className="p-skill-tag">Podman</span>
+        <span className="p-skill-tag">Compose</span>
+        <span className="p-skill-tag">Kubernetes</span>
       </div>
     </div>
-    <div className="skill-group">
-      <div className="skill-group-label">CI/CD</div>
-      <div className="skill-tags">
-        <span className="skill-tag">GitLab CI</span>
-        <span className="skill-tag">Azure DevOps</span>
-        <span className="skill-tag">GitHub Actions</span>
-        <span className="skill-tag">SonarQube</span>
+    <div className="p-skill-group">
+      <div className="p-skill-label">CI/CD</div>
+      <div className="p-skill-tags">
+        <span className="p-skill-tag">GitLab CI</span>
+        <span className="p-skill-tag">Azure DevOps</span>
+        <span className="p-skill-tag">GitHub Actions</span>
+        <span className="p-skill-tag">SonarQube</span>
       </div>
     </div>
-    <div className="skill-group">
-      <div className="skill-group-label">AWS Services</div>
-      <div className="skill-tags">
-        <span className="skill-tag">Lambda</span>
-        <span className="skill-tag">EventBridge</span>
-        <span className="skill-tag">RDS</span>
-        <span className="skill-tag">EC2</span>
-        <span className="skill-tag">IAM</span>
-        <span className="skill-tag">SNS</span>
+    <div className="p-skill-group">
+      <div className="p-skill-label">AWS Services</div>
+      <div className="p-skill-tags">
+        <span className="p-skill-tag">Lambda</span>
+        <span className="p-skill-tag">EventBridge</span>
+        <span className="p-skill-tag">RDS</span>
+        <span className="p-skill-tag">EC2</span>
+        <span className="p-skill-tag">IAM</span>
+        <span className="p-skill-tag">SNS</span>
       </div>
     </div>
-    <div className="skill-group">
-      <div className="skill-group-label">Systems</div>
-      <div className="skill-tags">
-        <span className="skill-tag">Linux</span>
-        <span className="skill-tag">Bash</span>
-        <span className="skill-tag">Python</span>
-        <span className="skill-tag">NGINX</span>
-        <span className="skill-tag">systemd</span>
+    <div className="p-skill-group">
+      <div className="p-skill-label">Systems</div>
+      <div className="p-skill-tags">
+        <span className="p-skill-tag">Linux</span>
+        <span className="p-skill-tag">Bash</span>
+        <span className="p-skill-tag">Python</span>
+        <span className="p-skill-tag">NGINX</span>
+        <span className="p-skill-tag">systemd</span>
       </div>
     </div>
-    <div className="skill-group">
-      <div className="skill-group-label">Build</div>
-      <div className="skill-tags">
-        <span className="skill-tag">CMake</span>
-        <span className="skill-tag">Makefile</span>
-        <span className="skill-tag">Git</span>
+    <div className="p-skill-group">
+      <div className="p-skill-label">Build</div>
+      <div className="p-skill-tags">
+        <span className="p-skill-tag">CMake</span>
+        <span className="p-skill-tag">Makefile</span>
+        <span className="p-skill-tag">Git</span>
       </div>
     </div>
-    <div className="skill-group">
-      <div className="skill-group-label">Platforms</div>
-      <div className="skill-tags">
-        <span className="skill-tag">OpenShift</span>
-        <span className="skill-tag">Backstage</span>
-        <span className="skill-tag">Hardware Integration Testing Systems</span>
-        <span className="skill-tag">PM2</span>
+    <div className="p-skill-group">
+      <div className="p-skill-label">Platforms</div>
+      <div className="p-skill-tags">
+        <span className="p-skill-tag">OpenShift</span>
+        <span className="p-skill-tag">Backstage</span>
+        <span className="p-skill-tag">Hardware Integration Testing</span>
+        <span className="p-skill-tag">PM2</span>
       </div>
-    </div>
-  </div>
-</div>
-
-<div className="section">
-  <div className="section-header">
-    <div className="section-title">What I care about</div>
-    <div className="section-line"></div>
-  </div>
-  <div className="focus-grid">
-    <div className="focus-card">
-      <div className="focus-title">Automation over manual</div>
-      <div className="focus-desc">If something is done twice, it gets scripted. VPN setup, snapshot workflows, broken machine recovery — all automated.</div>
-    </div>
-    <div className="focus-card">
-      <div className="focus-title">Cost-aware decisions</div>
-      <div className="focus-desc">Every solution includes a cost analysis. I've excluded approaches specifically because they couldn't justify their bill.</div>
-    </div>
-    <div className="focus-card">
-      <div className="focus-title">Documentation that holds up</div>
-      <div className="focus-desc">I write docs people actually use. When the old guide doesn't cut it, I rewrite it from scratch. KTs with no gaps.</div>
-    </div>
-    <div className="focus-card">
-      <div className="focus-title">Self-healing infrastructure</div>
-      <div className="focus-desc">DR that triggers on its own. Pipelines that recover. Monitoring that acts, not just alerts.</div>
-    </div>
-    <div className="focus-card">
-      <div className="focus-title">Security by default</div>
-      <div className="focus-desc">IAM audits, SSH keys replacing tokens, Terraform removing config drift. Not a separate phase — the default.</div>
-    </div>
-    <div className="focus-card">
-      <div className="focus-title">Clean handovers</div>
-      <div className="focus-desc">Systems should be understandable by whoever comes next. Architecture docs, runbooks, annotated Terraform — all part of the job.</div>
     </div>
   </div>
 </div>
 
-<div className="section">
-  <div className="section-header">
-    <div className="section-title">Personal Infrastructure</div>
-    <div className="section-line"></div>
+{/* ── FOCUS ── */}
+<div className="p-section">
+  <div className="p-section-header">
+    <span className="p-section-num">03</span>
+    <span className="p-section-title">What I care about</span>
+    <div className="p-section-line"></div>
   </div>
-  <div className="infra-card">
-    <div className="infra-dot"></div>
+  <div className="p-focus-grid">
+    <div className="p-focus-card">
+      <div className="p-focus-title">Automation over manual</div>
+      <div className="p-focus-desc">If something is done twice, it gets scripted. VPN setup, snapshot workflows, broken machine recovery — all automated.</div>
+    </div>
+    <div className="p-focus-card">
+      <div className="p-focus-title">Cost-aware decisions</div>
+      <div className="p-focus-desc">Every solution includes a cost analysis. I've excluded approaches specifically because they couldn't justify their bill.</div>
+    </div>
+    <div className="p-focus-card">
+      <div className="p-focus-title">Documentation that holds up</div>
+      <div className="p-focus-desc">I write docs people actually use. When the old guide doesn't cut it, I rewrite it from scratch. KTs with no gaps.</div>
+    </div>
+    <div className="p-focus-card">
+      <div className="p-focus-title">Self-healing infrastructure</div>
+      <div className="p-focus-desc">DR that triggers on its own. Pipelines that recover. Monitoring that acts, not just alerts.</div>
+    </div>
+    <div className="p-focus-card">
+      <div className="p-focus-title">Security by default</div>
+      <div className="p-focus-desc">IAM audits, SSH keys replacing tokens, Terraform removing config drift. Not a separate phase — the default.</div>
+    </div>
+    <div className="p-focus-card">
+      <div className="p-focus-title">Clean handovers</div>
+      <div className="p-focus-desc">Systems should be understandable by whoever comes next. Architecture docs, runbooks, annotated Terraform — all part of the job.</div>
+    </div>
+  </div>
+</div>
+
+{/* ── INFRA ── */}
+<div className="p-section">
+  <div className="p-section-header">
+    <span className="p-section-num">04</span>
+    <span className="p-section-title">Personal Infrastructure</span>
+    <div className="p-section-line"></div>
+  </div>
+  <div className="p-infra-card">
+    <div className="p-infra-dot"></div>
     <div>
-      <div className="infra-title">Self-hosted GitLab</div>
-      <div className="infra-sub">
+      <div className="p-infra-title">Self-hosted GitLab</div>
+      <div className="p-infra-sub">
         Running on personal hardware, migrating to a Raspberry Pi 5 ·{" "}
-        <a href="https://gitlab.madhoshyagnik.space" target="_blank" className="infra-link">gitlab.madhoshyagnik.space</a>
+        <a href="https://gitlab.madhoshyagnik.space" target="_blank" className="p-infra-link">gitlab.madhoshyagnik.space</a>
       </div>
     </div>
   </div>
 </div>
 
-<div className="port-footer">
-  <div className="footer-note">
+{/* ── FOOTER ── */}
+<div className="p-footer">
+  <div className="p-footer-note">
     Client and project names omitted due to confidentiality. All work reflects real production systems and responsibilities.
   </div>
-  <div className="footer-links">
+  <div className="p-footer-links">
     <a href="https://github.com/MadhoshYagnik" target="_blank">GitHub ↗</a>
     <a href="https://www.linkedin.com/in/madhosh/" target="_blank">LinkedIn ↗</a>
     <a href="https://gitlab.madhoshyagnik.space" target="_blank">GitLab ↗</a>
   </div>
 </div>
+
+</div>{/* end theme-root */}
