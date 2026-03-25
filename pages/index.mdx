@@ -4,7 +4,6 @@ title: " "
 
 <div id="theme-root" className="theme-light">
 
-{/* ── TOPBAR ── */}
 <div className="p-topbar">
   <span className="p-topbar-name">Madhosh Yagnik</span>
   <div className="p-topbar-right">
@@ -13,20 +12,15 @@ title: " "
       <a href="https://www.linkedin.com/in/madhosh/" target="_blank">LinkedIn</a>
       <a href="https://gitlab.madhoshyagnik.space" target="_blank">GitLab</a>
     </div>
-    <button className="p-theme-toggle" id="themeToggle" aria-label="Toggle theme" onclick="(function(){var r=document.getElementById('theme-root');var b=document.getElementById('themeToggle');if(r.classList.contains('theme-light')){r.classList.replace('theme-light','theme-dark');b.textContent='☀';}else{r.classList.replace('theme-dark','theme-light');b.textContent='☾';}})()">☾</button>
+    <button className="p-theme-toggle" id="themeToggle" aria-label="Toggle theme" onClick={() => { const r = document.getElementById('theme-root'); const b = document.getElementById('themeToggle'); if (r.classList.contains('theme-light')) { r.classList.replace('theme-light','theme-dark'); b.textContent='☀'; } else { r.classList.replace('theme-dark','theme-light'); b.textContent='☾'; } }}>☾</button>
   </div>
 </div>
 
-{/* ── HERO ── */}
 <div className="p-hero">
   <div className="p-hero-left">
     <div className="p-eyebrow">DevOps Engineer</div>
     <h1 className="p-name">Madhosh Yagnik</h1>
-    <p className="p-desc">
-      Production infrastructure across AWS and Azure — IaC migrations, CI/CD pipelines,
-      and automation that replaces slow manual work. I care about systems that are reliable,
-      cost-efficient, and easy for the next person to understand.
-    </p>
+    <p className="p-desc">Production infrastructure across AWS and Azure — IaC migrations, CI/CD pipelines, and automation that replaces slow manual work. I care about systems that are reliable, cost-efficient, and easy for the next person to understand.</p>
     <div className="p-stats">
       <div className="p-stat">
         <span className="p-stat-num">8+</span>
@@ -44,8 +38,6 @@ title: " "
       </div>
     </div>
   </div>
-
-  {/* Terminal */}
   <div className="p-terminal">
     <div className="p-term-bar">
       <span className="p-term-dot dot-red"></span>
@@ -54,28 +46,26 @@ title: " "
       <span className="p-term-title">madhosh ~ whoami</span>
     </div>
     <div className="p-term-body">
-      <div className="p-term-line"><span className="t-prompt">$</span> <span className="t-cmd">cat profile.json</span></div>
-      <div className="p-term-line t-out"><span className="t-key">cloud</span>       <span className="t-val">AWS · Azure · GCP</span></div>
-      <div className="p-term-line t-out"><span className="t-key">iac</span>         <span className="t-val">Terraform + Terraform Cloud</span></div>
-      <div className="p-term-line t-out"><span className="t-key">containers</span>  <span className="t-val">Docker · Podman · Compose</span></div>
-      <div className="p-term-line t-out"><span className="t-key">cicd</span>        <span className="t-val">GitLab CI · Azure DevOps · GH Actions</span></div>
-      <div className="p-term-line t-out"><span className="t-key">scripting</span>   <span className="t-val">Bash · Python</span></div>
-      <div className="p-term-line t-out"><span className="t-key">systems</span>     <span className="t-val">Linux · NGINX · systemd</span></div>
-      <div className="p-term-line t-out"><span className="t-key">self-hosted</span> <span className="t-val">GitLab on personal hardware</span></div>
-      <div className="p-term-line t-out"><span className="t-key">status</span>      <span className="t-val t-green">open to new work ✓</span></div>
-      <div className="p-term-line"><span className="t-prompt">$</span> <span className="t-cursor">▌</span></div>
+      <div className="p-term-line"><span className="t-prompt">$</span><span className="t-cmd"> cat profile.json</span></div>
+      <div className="p-term-line t-out"><span className="t-key">cloud</span><span className="t-val">AWS · Azure · GCP</span></div>
+      <div className="p-term-line t-out"><span className="t-key">iac</span><span className="t-val">Terraform + Terraform Cloud</span></div>
+      <div className="p-term-line t-out"><span className="t-key">containers</span><span className="t-val">Docker · Podman · Compose</span></div>
+      <div className="p-term-line t-out"><span className="t-key">cicd</span><span className="t-val">GitLab CI · Azure DevOps · GH Actions</span></div>
+      <div className="p-term-line t-out"><span className="t-key">scripting</span><span className="t-val">Bash · Python</span></div>
+      <div className="p-term-line t-out"><span className="t-key">systems</span><span className="t-val">Linux · NGINX · systemd</span></div>
+      <div className="p-term-line t-out"><span className="t-key">self-hosted</span><span className="t-val">GitLab on personal hardware</span></div>
+      <div className="p-term-line t-out"><span className="t-key">status</span><span className="t-green">open to new work ✓</span></div>
+      <div className="p-term-line"><span className="t-prompt">$</span><span className="t-cursor"> ▌</span></div>
     </div>
   </div>
 </div>
 
-{/* ── WORK ── */}
 <div className="p-section">
   <div className="p-section-header">
     <span className="p-section-num">01</span>
     <span className="p-section-title">Work</span>
     <div className="p-section-line"></div>
   </div>
-
   <div className="p-work-list">
 
     <details className="p-work-item">
@@ -227,7 +217,7 @@ title: " "
       </summary>
       <div className="p-work-body">
         <div className="p-work-meta">Apr 2025 — Ongoing · Confidential client</div>
-        <p className="p-work-desc">Working across two internal projects — a completed OpenShift plugin platform and an ongoing lab provisioning system used by ~1000 engineers.</p>
+        <p className="p-work-desc">Working across two internal projects — a completed OpenShift plugin platform and an ongoing lab provisioning system used by around 1000 engineers.</p>
         <ul className="p-work-bullets">
           <li>Contributed to a monorepo-based solution enabling consistent developer deployments across internal teams.</li>
           <li>Implemented GitLab CI pipelines for linting, SonarQube scanning, and container image build/release automation. Supported plugin releases from v0.0.2 to v0.0.24 — stable with minimal maintenance since.</li>
@@ -242,7 +232,6 @@ title: " "
   </div>
 </div>
 
-{/* ── STACK ── */}
 <div className="p-section">
   <div className="p-section-header">
     <span className="p-section-num">02</span>
@@ -326,7 +315,6 @@ title: " "
   </div>
 </div>
 
-{/* ── FOCUS ── */}
 <div className="p-section">
   <div className="p-section-header">
     <span className="p-section-num">03</span>
@@ -340,11 +328,11 @@ title: " "
     </div>
     <div className="p-focus-card">
       <div className="p-focus-title">Cost-aware decisions</div>
-      <div className="p-focus-desc">Every solution includes a cost analysis. I've excluded approaches specifically because they couldn't justify their bill.</div>
+      <div className="p-focus-desc">Every solution includes a cost analysis. I have excluded approaches specifically because they could not justify their bill.</div>
     </div>
     <div className="p-focus-card">
       <div className="p-focus-title">Documentation that holds up</div>
-      <div className="p-focus-desc">I write docs people actually use. When the old guide doesn't cut it, I rewrite it from scratch. KTs with no gaps.</div>
+      <div className="p-focus-desc">I write docs people actually use. When the old guide does not cut it, I rewrite it from scratch. KTs with no gaps.</div>
     </div>
     <div className="p-focus-card">
       <div className="p-focus-title">Self-healing infrastructure</div>
@@ -361,7 +349,6 @@ title: " "
   </div>
 </div>
 
-{/* ── INFRA ── */}
 <div className="p-section">
   <div className="p-section-header">
     <span className="p-section-num">04</span>
@@ -370,21 +357,15 @@ title: " "
   </div>
   <div className="p-infra-card">
     <div className="p-infra-dot"></div>
-    <div>
+    <div className="p-infra-text">
       <div className="p-infra-title">Self-hosted GitLab</div>
-      <div className="p-infra-sub">
-        Running on personal hardware, migrating to a Raspberry Pi 5 ·{" "}
-        <a href="https://gitlab.madhoshyagnik.space" target="_blank" className="p-infra-link">gitlab.madhoshyagnik.space</a>
-      </div>
+      <div className="p-infra-sub">Running on personal hardware, migrating to a Raspberry Pi 5 · <a href="https://gitlab.madhoshyagnik.space" target="_blank" className="p-infra-link">gitlab.madhoshyagnik.space</a></div>
     </div>
   </div>
 </div>
 
-{/* ── FOOTER ── */}
 <div className="p-footer">
-  <div className="p-footer-note">
-    Client and project names omitted due to confidentiality. All work reflects real production systems and responsibilities.
-  </div>
+  <div className="p-footer-note">Client and project names omitted due to confidentiality. All work reflects real production systems and responsibilities.</div>
   <div className="p-footer-links">
     <a href="https://github.com/MadhoshYagnik" target="_blank">GitHub ↗</a>
     <a href="https://www.linkedin.com/in/madhosh/" target="_blank">LinkedIn ↗</a>
@@ -392,4 +373,4 @@ title: " "
   </div>
 </div>
 
-</div>{/* end theme-root */}
+</div>
