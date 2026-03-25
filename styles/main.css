@@ -199,6 +199,7 @@ article p {
   text-transform: uppercase;
   color: var(--accent);
   margin-bottom: 10px;
+  font-weight: 700;
 }
 
 .p-name {
