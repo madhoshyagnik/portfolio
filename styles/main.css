@@ -1035,3 +1035,7 @@ details.p-work-item[open] .p-work-body {
 ::-webkit-scrollbar-track { background: transparent; }
 ::-webkit-scrollbar-thumb { background: var(--border2, #c8cdd6); border-radius: 3px; }
 ::-webkit-scrollbar-thumb:hover { background: var(--text-mut); }
+
+#theme-root.theme-dark a.p-infra-link {
+  color: #8ab4ff !important;
+}
