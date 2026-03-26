@@ -60,8 +60,8 @@
   --glow:        0 0 0 3px rgba(77,156,248,0.12);
 }
 
-#theme-root.theme-dark .p-infra-link {
-  color: #8ab4ff; /* brighter */
+#theme-root.theme-dark .p-infra-sub .p-infra-link {
+  color: #8ab4ff !important;
 }
 
 /* ═══════════════════════════════════════
