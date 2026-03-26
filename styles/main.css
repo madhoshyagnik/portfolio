@@ -64,7 +64,8 @@
    NEXTRA HARD RESETS
 ═══════════════════════════════════════ */
 body {
-  background: #f4f5f8 !important;
+  /* background: #f4f5f8 !important; */
+  background: var(--bg) !important;
   font-family: 'IBM Plex Sans', sans-serif !important;
   -webkit-font-smoothing: antialiased;
   margin: 0 !important;
