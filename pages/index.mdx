@@ -12,7 +12,7 @@ title: " "
       <a href="https://www.linkedin.com/in/madhosh/" target="_blank">LinkedIn</a>
       <a href="https://gitlab.madhoshyagnik.space" target="_blank">GitLab</a>
     </div>
-    <button className="p-theme-toggle" id="themeToggle" aria-label="Toggle theme" onclick="var r=document.getElementById('theme-root');var b=document.getElementById('themeToggle');if(r.classList.contains('theme-light')){r.classList.replace('theme-light','theme-dark');b.textContent='Light mode';}else{r.classList.replace('theme-dark','theme-light');b.textContent='Dark mode';}">Dark mode</button>
+    <button className="p-theme-toggle" id="themeToggle" aria-label="Toggle theme">Dark mode</button>
   </div>
 </div>
 
@@ -39,7 +39,8 @@ title: " "
       </div>
     </div>
   </div>
-  <div className="p-terminal">
+  <button className="p-term-toggle" id="termToggle">profile.json — tap to expand</button>
+  <div className="p-terminal" id="terminalPanel">
     <div className="p-term-bar">
       <span className="p-term-dot dot-red"></span>
       <span className="p-term-dot dot-yellow"></span>
@@ -66,6 +67,7 @@ title: " "
     <span className="p-section-num">01</span>
     <span className="p-section-title">Work</span>
     <div className="p-section-line"></div>
+    <span className="p-section-hint">tap to expand</span>
   </div>
   <div className="p-work-list">
 
@@ -340,26 +342,32 @@ title: " "
   </div>
   <div className="p-focus-grid">
     <div className="p-focus-card">
+      <div className="p-focus-icon">⚙</div>
       <div className="p-focus-title">Automation over manual</div>
       <div className="p-focus-desc">If something is done twice, it gets scripted. VPN setup, snapshot workflows, broken machine recovery — all automated.</div>
     </div>
     <div className="p-focus-card">
+      <div className="p-focus-icon">$</div>
       <div className="p-focus-title">Cost-aware decisions</div>
       <div className="p-focus-desc">Every solution includes a cost analysis. I have excluded approaches specifically because they could not justify their bill.</div>
     </div>
     <div className="p-focus-card">
+      <div className="p-focus-icon">✎</div>
       <div className="p-focus-title">Documentation that holds up</div>
       <div className="p-focus-desc">I write docs people actually use. When the old guide does not cut it, I rewrite it from scratch. KTs with no gaps.</div>
     </div>
     <div className="p-focus-card">
+      <div className="p-focus-icon">♻</div>
       <div className="p-focus-title">Self-healing infrastructure</div>
       <div className="p-focus-desc">DR that triggers on its own. Pipelines that recover. Monitoring that acts, not just alerts.</div>
     </div>
     <div className="p-focus-card">
+      <div className="p-focus-icon">🔒</div>
       <div className="p-focus-title">Security by default</div>
       <div className="p-focus-desc">IAM audits, SSH keys replacing tokens, Terraform removing config drift. Not a separate phase — the default.</div>
     </div>
     <div className="p-focus-card">
+      <div className="p-focus-icon">→</div>
       <div className="p-focus-title">Clean handovers</div>
       <div className="p-focus-desc">Systems should be understandable by whoever comes next. Architecture docs, runbooks, annotated Terraform — all part of the job.</div>
     </div>
@@ -391,3 +399,38 @@ title: " "
 </div>
 
 </div>
+
+<script dangerouslySetInnerHTML={{__html: `
+(function() {
+  // Theme toggle
+  var root = document.getElementById('theme-root');
+  var btn  = document.getElementById('themeToggle');
+  if (root && btn) {
+    var saved = localStorage.getItem('portfolio-theme') || 'theme-light';
+    root.className = saved;
+    btn.textContent = saved === 'theme-dark' ? 'Light mode' : 'Dark mode';
+
+    btn.addEventListener('click', function() {
+      if (root.classList.contains('theme-light')) {
+        root.classList.replace('theme-light', 'theme-dark');
+        btn.textContent = 'Light mode';
+        localStorage.setItem('portfolio-theme', 'theme-dark');
+      } else {
+        root.classList.replace('theme-dark', 'theme-light');
+        btn.textContent = 'Dark mode';
+        localStorage.setItem('portfolio-theme', 'theme-light');
+      }
+    });
+  }
+
+  // Mobile terminal toggle
+  var termBtn   = document.getElementById('termToggle');
+  var termPanel = document.getElementById('terminalPanel');
+  if (termBtn && termPanel) {
+    termBtn.addEventListener('click', function() {
+      var isOpen = termPanel.classList.toggle('term-open');
+      termBtn.textContent = isOpen ? 'profile.json — tap to collapse' : 'profile.json — tap to expand';
+    });
+  }
+})();
+`}} />
