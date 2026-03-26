@@ -1,825 +1,393 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap');
-
-/* ═══════════════════════════════════════
-   LIGHT — VS Code Light Modern inspired
-   bg:      #fafafa  (editor bg)
-   cards:   #ffffff
-   text:    #1e1e1e  (editor fg)
-   accent:  #0070c1  (vscode blue)
-   green:   #008000  (vscode string green)
-   teal:    #267f99  (vscode type teal)
-═══════════════════════════════════════ */
-#theme-root.theme-light {
-  --bg:          #fafafa;
-  --bg2:         #ffffff;
-  --bg3:         #f3f3f3;
-  --border:      #e5e5e5;
-  --border2:     #cecece;
-  --text:        #1e1e1e;
-  --text-dim:    #3b3b3b;
-  --text-mut:    #6e7681;
-  --accent:      #0070c1;
-  --accent-dim:  #e8f4fc;
-  --accent-bdr:  #a8d4ef;
-  --green:       #008000;
-  --green-dim:   #e8f5e8;
-  --green-bdr:   #9dd89d;
-  --orange:      #b46921;
-  --orange-dim:  #fdf3e7;
-  --orange-bdr:  #e8c48a;
-  --yellow:      #795e26;
-  --yellow-dim:  #fdf8ec;
-  --yellow-bdr:  #d9c08a;
-  --teal:        #267f99;
-  --dot-color:   rgba(0,112,193,0.06);
-  --shadow:      0 1px 2px rgba(0,0,0,0.06), 0 2px 8px rgba(0,0,0,0.04);
-  --shadow-h:    0 2px 6px rgba(0,0,0,0.08), 0 6px 20px rgba(0,0,0,0.06);
-}
-
-/* ═══════════════════════════════════════
-   DARK — VS Code Dark+ inspired
-   bg:      #1e1e1e  (editor bg)
-   cards:   #252526  (sidebar bg)
-   text:    #d4d4d4  (editor fg)
-   accent:  #569cd6  (vscode keyword blue)
-   green:   #4ec9b0  (vscode type teal — readable on dark)
-   string:  #ce9178  (vscode string orange)
-═══════════════════════════════════════ */
-#theme-root.theme-dark {
-  --bg:          #1e1e1e;
-  --bg2:         #252526;
-  --bg3:         #2d2d2d;
-  --border:      #3e3e42;
-  --border2:     #555558;
-  --text:        #d4d4d4;
-  --text-dim:    #a8a8a8;
-  --text-mut:    #6a6a6a;
-  --accent:      #569cd6;
-  --accent-dim:  #1a2e40;
-  --accent-bdr:  #2d5a80;
-  --green:       #4ec9b0;
-  --green-dim:   #163330;
-  --green-bdr:   #2a6860;
-  --orange:      #ce9178;
-  --orange-dim:  #2d1e17;
-  --orange-bdr:  #6b4030;
-  --yellow:      #dcdcaa;
-  --yellow-dim:  #2a2a1a;
-  --yellow-bdr:  #5a5a30;
-  --teal:        #4ec9b0;
-  --dot-color:   rgba(86,156,214,0.07);
-  --shadow:      0 1px 3px rgba(0,0,0,0.4), 0 3px 10px rgba(0,0,0,0.3);
-  --shadow-h:    0 2px 6px rgba(0,0,0,0.5), 0 6px 20px rgba(0,0,0,0.4);
-}
-
-/* ═══════════════════════════════════════
-   NEXTRA HARD RESETS
-═══════════════════════════════════════ */
-body {
-  background: #fafafa !important;
-  font-family: 'Inter', sans-serif !important;
-  font-style: normal !important;
-  -webkit-font-smoothing: antialiased;
-  margin: 0 !important;
-}
-
-* { font-style: normal !important; }
-
-.nextra-nav-container,
-.nextra-sidebar-container,
-.nextra-toc,
-nav.nextra-nav-container,
-footer {
-  display: none !important;
-}
-
-.nextra-content h1:first-child,
-article h1:first-child {
-  display: none !important;
-}
-
-.nextra-content,
-main,
-article {
-  max-width: 100% !important;
-  margin: 0 !important;
-  padding: 0 !important;
-  background: transparent !important;
-  font-family: 'Inter', sans-serif !important;
-  font-style: normal !important;
-}
-
-.nextra-content p,
-article p {
-  margin: 0 !important;
-  font-style: normal !important;
-}
-
-/* ═══════════════════════════════════════
-   THEME ROOT + DOT GRID
-═══════════════════════════════════════ */
-#theme-root {
-  background-color: var(--bg);
-  background-image: radial-gradient(var(--dot-color) 1px, transparent 1px);
-  background-size: 24px 24px;
-  color: var(--text);
-  min-height: 100vh;
-  padding-bottom: 80px;
-  transition: background-color 0.25s, color 0.25s;
-  font-style: normal;
-}
-
-#theme-root > div {
-  max-width: 920px;
-  margin-left: auto;
-  margin-right: auto;
-  padding-left: 28px;
-  padding-right: 28px;
-}
-
-/* ═══════════════════════════════════════
-   TOPBAR
-═══════════════════════════════════════ */
-.p-topbar {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding-top: 18px;
-  padding-bottom: 18px;
-  border-bottom: 1px solid var(--border);
-  margin-bottom: 56px;
-}
-
-.p-topbar-name {
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 13px;
-  font-weight: 500;
-  color: var(--text);
-  font-style: normal;
-}
-
-.p-topbar-right {
-  display: flex;
-  align-items: center;
-  gap: 20px;
-}
-
-.p-topbar-links {
-  display: flex;
-  gap: 18px;
-}
-
-.p-topbar-links a {
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 12px;
-  font-weight: 400;
-  color: var(--text-mut);
-  text-decoration: none;
-  transition: color 0.15s;
-  font-style: normal;
-}
-
-.p-topbar-links a:hover { color: var(--accent); }
-
-.p-theme-toggle {
-  background: var(--bg2);
-  border: 1px solid var(--border);
-  border-radius: 5px;
-  padding: 5px 12px;
-  font-size: 11px;
-  font-family: 'JetBrains Mono', monospace;
-  font-weight: 500;
-  font-style: normal;
-  cursor: pointer;
-  color: var(--text-dim);
-  letter-spacing: 0.02em;
-  transition: background 0.15s, border-color 0.15s, color 0.15s;
-  white-space: nowrap;
-}
-
-.p-theme-toggle:hover {
-  background: var(--bg3);
-  border-color: var(--border2);
-  color: var(--accent);
-}
-
-/* ═══════════════════════════════════════
-   HERO
-═══════════════════════════════════════ */
-.p-hero {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 40px;
-  align-items: start;
-  margin-bottom: 72px;
-  padding-top: 8px;
-}
-
-.p-eyebrow {
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 11px;
-  font-style: normal;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: var(--accent);
-  margin-bottom: 10px;
-}
-
-.p-name {
-  font-family: 'Inter', sans-serif !important;
-  font-size: 2.4rem !important;
-  font-weight: 600 !important;
-  font-style: normal !important;
-  color: var(--text) !important;
-  letter-spacing: -0.02em !important;
-  line-height: 1.1 !important;
-  margin-top: 0 !important;
-  margin-bottom: 12px !important;
-  border: none !important;
-  padding: 0 !important;
-}
-
-.p-name-rule {
-  width: 36px;
-  height: 3px;
-  background: var(--accent);
-  border-radius: 2px;
-  margin-bottom: 20px;
-}
-
-.p-desc {
-  font-family: 'Inter', sans-serif;
-  font-size: 14px;
-  font-style: normal;
-  color: var(--text-dim);
-  line-height: 1.75;
-  margin-bottom: 28px !important;
-  margin-top: 0 !important;
-  max-width: 420px;
-}
-
-.p-stats {
-  display: flex;
-  align-items: center;
-  background: var(--bg2);
-  border: 1px solid var(--border);
-  border-radius: 7px;
-  overflow: hidden;
-  width: fit-content;
-  box-shadow: var(--shadow);
-}
-
-.p-stat {
-  display: flex;
-  flex-direction: column;
-  padding: 13px 20px;
-  gap: 3px;
-}
-
-.p-stat-divider {
-  width: 1px;
-  height: 38px;
-  background: var(--border);
-  flex-shrink: 0;
-}
-
-.p-stat-num {
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 1.15rem;
-  font-weight: 600;
-  font-style: normal;
-  color: var(--accent);
-  line-height: 1;
-}
-
-.p-stat-label {
-  font-size: 10px;
-  font-style: normal;
-  color: var(--text-mut);
-  letter-spacing: 0.03em;
-  margin-top: 2px;
-}
-
-/* ═══════════════════════════════════════
-   TERMINAL
-   VS Code terminal palette:
-   bg:      #1e1e1e
-   bar:     #323233
-   prompt:  #569cd6  (keyword blue)
-   cmd:     #d4d4d4  (fg)
-   key:     #4ec9b0  (type teal — high contrast)
-   val:     #d4d4d4  (fg)
-   green:   #4ec9b0
-   cursor:  #569cd6
-═══════════════════════════════════════ */
-.p-terminal {
-  background: #1e1e1e;
-  border: 1px solid #3e3e42;
-  border-radius: 8px;
-  overflow: hidden;
-  box-shadow: 0 4px 24px rgba(0,0,0,0.28);
-  font-family: 'JetBrains Mono', monospace;
-  font-style: normal;
-}
-
-.p-term-bar {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  padding: 9px 14px;
-  background: #323233;
-  border-bottom: 1px solid #3e3e42;
-}
-
-.p-term-dot {
-  width: 11px;
-  height: 11px;
-  border-radius: 50%;
-  flex-shrink: 0;
-}
-
-.dot-red    { background: #ff5f57; }
-.dot-yellow { background: #febc2e; }
-.dot-green  { background: #28c840; }
-
-.p-term-title {
-  font-size: 11px;
-  color: #858585;
-  margin-left: 8px;
-  letter-spacing: 0.03em;
-}
-
-.p-term-body {
-  padding: 16px 18px 20px;
-  display: flex;
-  flex-direction: column;
-  gap: 1px;
-}
-
-@keyframes termLine {
-  from { opacity: 0; transform: translateY(3px); }
-  to   { opacity: 1; transform: translateY(0); }
-}
-
-.p-term-line {
-  font-size: 12.5px;
-  line-height: 1.8;
-  display: flex;
-  gap: 0;
-  opacity: 0;
-  animation: termLine 0.18s ease forwards;
-  font-style: normal;
-}
-
-.tl-1  { animation-delay: 0.10s; }
-.tl-2  { animation-delay: 0.24s; }
-.tl-3  { animation-delay: 0.37s; }
-.tl-4  { animation-delay: 0.50s; }
-.tl-5  { animation-delay: 0.63s; }
-.tl-6  { animation-delay: 0.76s; }
-.tl-7  { animation-delay: 0.89s; }
-.tl-8  { animation-delay: 1.02s; }
-.tl-9  { animation-delay: 1.15s; }
-.tl-10 { animation-delay: 1.28s; }
-
-.t-out { padding-left: 16px; }
-
-.t-prompt {
-  color: #569cd6;
-  flex-shrink: 0;
-  margin-right: 8px;
-}
-
-.t-cmd   { color: #d4d4d4; }
-
-.t-key {
-  color: #4ec9b0;
-  display: inline-block;
-  min-width: 116px;
-  font-style: normal;
-}
-
-.t-val   { color: #d4d4d4; }
-.t-green { color: #4ec9b0; font-weight: 500; }
-
-.t-cursor {
-  color: #569cd6;
-  animation: blink 1.1s step-end infinite;
-}
-
-@keyframes blink { 50% { opacity: 0; } }
-
-/* ═══════════════════════════════════════
-   SECTIONS
-═══════════════════════════════════════ */
-.p-section { margin-bottom: 64px; }
-
-.p-section-header {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  margin-bottom: 20px;
-}
-
-.p-section-num {
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 11px;
-  font-weight: 600;
-  font-style: normal;
-  color: var(--accent);
-  letter-spacing: 0.06em;
-}
-
-.p-section-title {
-  font-size: 11px;
-  font-weight: 600;
-  font-style: normal;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: var(--text);
-  white-space: nowrap;
-}
-
-.p-section-line {
-  flex: 1;
-  height: 1px;
-  background: var(--border);
-}
-
-/* ═══════════════════════════════════════
-   WORK ACCORDION
-═══════════════════════════════════════ */
-.p-work-list {
-  display: flex;
-  flex-direction: column;
-  gap: 3px;
-}
-
-details.p-work-item {
-  background: var(--bg2);
-  border: 1px solid var(--border);
-  border-left: 3px solid transparent;
-  border-radius: 7px;
-  overflow: hidden;
-  transition: border-color 0.18s, border-left-color 0.18s, box-shadow 0.18s;
-  list-style: none;
-}
-
-details.p-work-item:hover {
-  border-color: var(--border2);
-  border-left-color: var(--border2);
-  box-shadow: var(--shadow);
-}
-
-details.p-work-item[open] {
-  border-color: var(--accent);
-  border-left-color: var(--accent);
-  box-shadow: var(--shadow-h);
-}
-
-summary.p-work-summary {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  padding: 13px 16px 13px 14px;
-  cursor: pointer;
-  user-select: none;
-  list-style: none;
-}
-
-summary.p-work-summary::-webkit-details-marker { display: none; }
-summary.p-work-summary::marker { content: ''; }
-
-.p-work-idx {
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 10px;
-  font-style: normal;
-  color: var(--text-mut);
-  width: 18px;
-  flex-shrink: 0;
-}
-
-.p-work-name {
-  flex: 1;
-  font-size: 13.5px;
-  font-weight: 500;
-  font-style: normal;
-  color: var(--text);
-}
-
-.p-work-tag {
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 10px;
-  font-weight: 500;
-  font-style: normal;
-  letter-spacing: 0.03em;
-  padding: 2px 8px;
-  border-radius: 3px;
-  white-space: nowrap;
-  flex-shrink: 0;
-}
-
-.tag-aws   { background: var(--orange-dim); color: var(--orange); border: 1px solid var(--orange-bdr); }
-.tag-azure { background: var(--accent-dim); color: var(--accent); border: 1px solid var(--accent-bdr); }
-.tag-linux { background: var(--yellow-dim); color: var(--yellow); border: 1px solid var(--yellow-bdr); }
-.tag-multi { background: var(--accent-dim); color: var(--accent); border: 1px solid var(--accent-bdr); }
-.tag-anon  { background: var(--bg3);        color: var(--text-mut); border: 1px solid var(--border2); }
-
-.p-work-chevron {
-  font-size: 18px;
-  font-weight: 400;
-  font-style: normal;
-  color: var(--text-mut);
-  transition: transform 0.22s cubic-bezier(0.4,0,0.2,1), color 0.18s;
-  flex-shrink: 0;
-  line-height: 1;
-}
-
-details.p-work-item[open] .p-work-chevron {
-  transform: rotate(90deg);
-  color: var(--accent);
-}
-
-.p-work-body {
-  display: grid;
-  grid-template-rows: 0fr;
-  transition: grid-template-rows 0.28s cubic-bezier(0.4,0,0.2,1);
-  border-top: 0px solid var(--border);
-}
-
-details.p-work-item[open] .p-work-body {
-  grid-template-rows: 1fr;
-  border-top-width: 1px;
-}
-
-.p-work-body-inner {
-  overflow: hidden;
-  padding: 0 18px 18px 50px;
-}
-
-.p-work-meta {
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 10px;
-  font-style: normal;
-  color: var(--text-mut);
-  padding-top: 14px;
-  margin-bottom: 10px;
-  display: block;
-}
-
-.p-work-desc {
-  font-family: 'Inter', sans-serif !important;
-  font-size: 13px !important;
-  font-style: normal !important;
-  color: var(--text-dim) !important;
-  line-height: 1.75 !important;
-  margin-bottom: 12px !important;
-  margin-top: 0 !important;
-}
-
-.p-work-bullets {
-  list-style: none !important;
-  margin: 0 0 14px !important;
-  padding: 0 !important;
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
-}
-
-.p-work-bullets li {
-  display: flex;
-  gap: 10px;
-  font-family: 'Inter', sans-serif;
-  font-size: 12.5px;
-  font-style: normal;
-  color: var(--text-dim);
-  line-height: 1.65;
-}
-
-.p-work-bullets li::before {
-  content: '—';
-  color: var(--text-mut);
-  flex-shrink: 0;
-}
-
-.p-work-bullets li::marker { content: ''; }
-
-.p-work-impact {
-  display: inline-flex;
-  align-items: center;
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 11px;
-  font-style: normal;
-  color: var(--green);
-  background: var(--green-dim);
-  border: 1px solid var(--green-bdr);
-  border-radius: 4px;
-  padding: 4px 10px;
-}
-
-/* ═══════════════════════════════════════
-   SKILLS
-═══════════════════════════════════════ */
-.p-skills-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(175px, 1fr));
-  gap: 8px;
-}
-
-.p-skill-group {
-  background: var(--bg2);
-  border: 1px solid var(--border);
-  border-radius: 7px;
-  padding: 13px 15px;
-  transition: border-color 0.15s, box-shadow 0.15s;
-}
-
-.p-skill-group:hover {
-  border-color: var(--border2);
-  box-shadow: var(--shadow);
-}
-
-.p-skill-label {
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 9px;
-  font-style: normal;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: var(--text-mut);
-  margin-bottom: 9px;
-}
-
-.p-skill-tags { display: flex; flex-wrap: wrap; gap: 5px; }
-
-.p-skill-tag {
-  font-family: 'Inter', sans-serif;
-  font-size: 11px;
-  font-style: normal;
-  padding: 2px 7px;
-  background: var(--bg3);
-  border: 1px solid var(--border);
-  border-radius: 3px;
-  color: var(--text-dim);
-}
-
-/* ═══════════════════════════════════════
-   FOCUS CARDS
-═══════════════════════════════════════ */
-.p-focus-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
-  gap: 8px;
-}
-
-.p-focus-card {
-  background: var(--bg2);
-  border: 1px solid var(--border);
-  border-left: 3px solid transparent;
-  border-radius: 7px;
-  padding: 16px 18px;
-  transition: border-color 0.18s, border-left-color 0.18s, box-shadow 0.18s;
-}
-
-.p-focus-card:hover {
-  border-color: var(--border2);
-  border-left-color: var(--accent);
-  box-shadow: var(--shadow);
-}
-
-.p-focus-title {
-  font-family: 'Inter', sans-serif;
-  font-size: 13px;
-  font-weight: 600;
-  font-style: normal;
-  color: var(--text);
-  margin-bottom: 5px;
-}
-
-.p-focus-desc {
-  font-family: 'Inter', sans-serif;
-  font-size: 12.5px;
-  font-style: normal;
-  color: var(--text-dim);
-  line-height: 1.7;
-}
-
-/* ═══════════════════════════════════════
-   INFRA
-═══════════════════════════════════════ */
-.p-infra-card {
-  background: var(--bg2);
-  border: 1px solid var(--border);
-  border-radius: 7px;
-  padding: 18px 22px;
-  display: flex;
-  align-items: center;
-  gap: 14px;
-  box-shadow: var(--shadow);
-}
-
-.p-infra-dot {
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  background: var(--green);
-  flex-shrink: 0;
-  box-shadow: 0 0 7px var(--green);
-  animation: pulse 2.4s ease-in-out infinite;
-}
-
-@keyframes pulse {
-  0%, 100% { opacity: 1; }
-  50%       { opacity: 0.4; }
-}
-
-.p-infra-text { flex: 1; }
-
-.p-infra-title {
-  font-family: 'Inter', sans-serif;
-  font-size: 13px;
-  font-weight: 500;
-  font-style: normal;
-  color: var(--text);
-  margin-bottom: 3px;
-}
-
-.p-infra-sub {
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 11px;
-  font-style: normal;
-  color: var(--text-mut);
-}
-
-.p-infra-link { color: var(--accent); text-decoration: none; }
-.p-infra-link:hover { text-decoration: underline; }
-
-/* ═══════════════════════════════════════
-   FOOTER
-═══════════════════════════════════════ */
-.p-footer {
-  border-top: 1px solid var(--border);
-  padding-top: 24px;
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  flex-wrap: wrap;
-  gap: 12px;
-}
-
-.p-footer-note {
-  font-family: 'Inter', sans-serif;
-  font-size: 11px;
-  font-style: normal;
-  color: var(--text-mut);
-  max-width: 460px;
-  line-height: 1.7;
-}
-
-.p-footer-links { display: flex; gap: 16px; }
-
-.p-footer-links a {
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 11px;
-  font-style: normal;
-  color: var(--text-dim);
-  text-decoration: none;
-  transition: color 0.15s;
-}
-
-.p-footer-links a:hover { color: var(--accent); }
-
-/* ═══════════════════════════════════════
-   ANIMATIONS
-═══════════════════════════════════════ */
-@keyframes fadeUp {
-  from { opacity: 0; transform: translateY(10px); }
-  to   { opacity: 1; transform: translateY(0); }
-}
-
-.p-hero    { animation: fadeUp 0.45s ease both; }
-.p-section { animation: fadeUp 0.45s ease both; }
-.p-footer  { animation: fadeUp 0.45s ease both 0.15s; }
-
-/* ═══════════════════════════════════════
-   RESPONSIVE
-═══════════════════════════════════════ */
-@media (max-width: 720px) {
-  .p-hero { grid-template-columns: 1fr; margin-bottom: 48px; }
-  .p-terminal { display: none; }
-  .p-hero-left { padding-bottom: 0; }
-}
-
-@media (max-width: 600px) {
-  #theme-root > div { padding-left: 16px; padding-right: 16px; }
-  .p-topbar-links { display: none; }
-  .p-name { font-size: 1.8rem !important; }
-  .p-work-body-inner { padding-left: 16px; }
-  .p-stats { width: 100%; }
-}
-
-/* ═══════════════════════════════════════
-   SCROLLBAR
-═══════════════════════════════════════ */
-::-webkit-scrollbar { width: 5px; }
-::-webkit-scrollbar-track { background: var(--bg, #fafafa); }
-::-webkit-scrollbar-thumb { background: var(--border2, #cecece); border-radius: 3px; }
+---
+title: " "
+---
+
+<div id="theme-root" className="theme-light">
+
+<div className="p-topbar">
+  <span className="p-topbar-name">Madhosh Yagnik</span>
+  <div className="p-topbar-right">
+    <div className="p-topbar-links">
+      <a href="https://github.com/MadhoshYagnik" target="_blank">GitHub</a>
+      <a href="https://www.linkedin.com/in/madhosh/" target="_blank">LinkedIn</a>
+      <a href="https://gitlab.madhoshyagnik.space" target="_blank">GitLab</a>
+    </div>
+    <button className="p-theme-toggle" id="themeToggle" aria-label="Toggle theme" onClick={() => { const r = document.getElementById('theme-root'); const b = document.getElementById('themeToggle'); if (r.classList.contains('theme-light')) { r.classList.replace('theme-light','theme-dark'); b.textContent='Light mode'; } else { r.classList.replace('theme-dark','theme-light'); b.textContent='Dark mode'; } }}>Dark mode</button>
+  </div>
+</div>
+
+<div className="p-hero">
+  <div className="p-hero-left">
+    <div className="p-eyebrow">DevOps Engineer</div>
+    <h1 className="p-name">Madhosh Yagnik</h1>
+    <div className="p-name-rule"></div>
+    <p className="p-desc">Production infrastructure across AWS and Azure — IaC migrations, CI/CD pipelines, and automation that replaces slow manual work. I care about systems that are reliable, cost-efficient, and easy for the next person to understand.</p>
+    <div className="p-stats">
+      <div className="p-stat">
+        <span className="p-stat-num">8+</span>
+        <span className="p-stat-label">projects</span>
+      </div>
+      <div className="p-stat-divider"></div>
+      <div className="p-stat">
+        <span className="p-stat-num">~$100</span>
+        <span className="p-stat-label">saved / mo</span>
+      </div>
+      <div className="p-stat-divider"></div>
+      <div className="p-stat">
+        <span className="p-stat-num">1.5yr</span>
+        <span className="p-stat-label">production</span>
+      </div>
+    </div>
+  </div>
+  <div className="p-terminal">
+    <div className="p-term-bar">
+      <span className="p-term-dot dot-red"></span>
+      <span className="p-term-dot dot-yellow"></span>
+      <span className="p-term-dot dot-green"></span>
+      <span className="p-term-title">madhosh ~ whoami</span>
+    </div>
+    <div className="p-term-body">
+      <div className="p-term-line tl-1"><span className="t-prompt">$</span><span className="t-cmd"> cat profile.json</span></div>
+      <div className="p-term-line t-out tl-2"><span className="t-key">cloud</span><span className="t-val">AWS · Azure · GCP</span></div>
+      <div className="p-term-line t-out tl-3"><span className="t-key">iac</span><span className="t-val">Terraform + Terraform Cloud</span></div>
+      <div className="p-term-line t-out tl-4"><span className="t-key">containers</span><span className="t-val">Docker · Podman · Compose</span></div>
+      <div className="p-term-line t-out tl-5"><span className="t-key">cicd</span><span className="t-val">GitLab CI · Azure DevOps · GH Actions</span></div>
+      <div className="p-term-line t-out tl-6"><span className="t-key">scripting</span><span className="t-val">Bash · Python</span></div>
+      <div className="p-term-line t-out tl-7"><span className="t-key">systems</span><span className="t-val">Linux · NGINX · systemd</span></div>
+      <div className="p-term-line t-out tl-8"><span className="t-key">self-hosted</span><span className="t-val">GitLab on personal hardware</span></div>
+      <div className="p-term-line t-out tl-9"><span className="t-key">status</span><span className="t-green">open to new work ✓</span></div>
+      <div className="p-term-line tl-10"><span className="t-prompt">$</span><span className="t-cursor"> ▌</span></div>
+    </div>
+  </div>
+</div>
+
+<div className="p-section">
+  <div className="p-section-header">
+    <span className="p-section-num">01</span>
+    <span className="p-section-title">Work</span>
+    <div className="p-section-line"></div>
+  </div>
+  <div className="p-work-list">
+
+    <details className="p-work-item">
+      <summary className="p-work-summary">
+        <span className="p-work-idx">01</span>
+        <span className="p-work-name">AWS Disaster Recovery &amp; Infrastructure Automation</span>
+        <span className="p-work-tag tag-aws">AWS</span>
+        <span className="p-work-chevron">›</span>
+      </summary>
+      <div className="p-work-body">
+        <div className="p-work-body-inner">
+          <div className="p-work-meta">Oct 2024 — Mar 2025 · Singapore-based bank</div>
+          <p className="p-work-desc">Designed and delivered multiple DR and infrastructure automation solutions for a production banking environment. Every decision was weighed against cost.</p>
+          <ul className="p-work-bullets">
+            <li>Migrated Bastion servers from CentOS 7 (EOL) to Ubuntu 24.04 LTS with no service disruption. Rewrote the setup guide for Debian and YUM-based distros.</li>
+            <li>Built a cost-effective DR system: EventBridge + Lambda for automated RDS snapshots, cross-region copy, and health-monitored auto-recovery if primary failed.</li>
+            <li>Developed a parallel EC2 DR solution with AMI rotation, cross-region copy, auto-launch on health check failure, and SNS alerting.</li>
+            <li>Evaluated AWS Read Replicas and DMS; excluded both on cost grounds after full POC — documented the decision with analysis.</li>
+            <li>Resolved urgent Bitbucket pipeline failures and stabilised CI/CD long-term.</li>
+            <li>Recovered access to a Windows EC2 instance after the private key was lost.</li>
+          </ul>
+          <div className="p-work-impact">↑ Multiple automated DR paths · Cost-justified throughout</div>
+        </div>
+      </div>
+    </details>
+
+    <details className="p-work-item">
+      <summary className="p-work-summary">
+        <span className="p-work-idx">02</span>
+        <span className="p-work-name">DevOps Backlog — Docker, CMake, Makefile, Git, Linux</span>
+        <span className="p-work-tag tag-linux">Linux</span>
+        <span className="p-work-chevron">›</span>
+      </summary>
+      <div className="p-work-body">
+        <div className="p-work-body-inner">
+          <div className="p-work-meta">Dec 2024 — Jan 2025 · Contract</div>
+          <p className="p-work-desc">Cleared a backlog of 72 DevOps tasks across Docker, Linux, Git, Makefile, and CMake — 64 accepted on first review.</p>
+          <ul className="p-work-bullets">
+            <li>Picked up CMake and Makefile tasks while learning both tools in parallel — no blocked work or delays.</li>
+            <li>Daily stand-up transparency with clear progress tracking throughout.</li>
+          </ul>
+          <div className="p-work-impact">↑ 64 / 72 tasks accepted · Full delivery satisfaction</div>
+        </div>
+      </div>
+    </details>
+
+    <details className="p-work-item">
+      <summary className="p-work-summary">
+        <span className="p-work-idx">03</span>
+        <span className="p-work-name">Full Azure Migration &amp; CI/CD Pipeline</span>
+        <span className="p-work-tag tag-azure">Azure</span>
+        <span className="p-work-chevron">›</span>
+      </summary>
+      <div className="p-work-body">
+        <div className="p-work-body-inner">
+          <div className="p-work-meta">Feb 2025 — Mar 2025 · Primary DevOps resource</div>
+          <p className="p-work-desc">Took a project running entirely on local setups and brought it to a production-ready Azure deployment in one month.</p>
+          <ul className="p-work-bullets">
+            <li>Migrated full stack to Azure Cloud, resolving routing and network configuration issues along the way.</li>
+            <li>Iterated CI/CD across three approaches — GitHub Actions, Azure DevOps via SSH, and finally an Azure agent-based pipeline with client-approved security controls.</li>
+            <li>Optimised the frontend Dockerfile to serve static files — load time dropped from seconds to milliseconds.</li>
+            <li>Dockerized all services; created Compose stacks for consistent local and cloud environments.</li>
+            <li>Added systemd services and cron jobs for self-starting apps at VM boot.</li>
+          </ul>
+          <div className="p-work-impact">↑ Zero-to-cloud in one month · Load time: seconds → milliseconds</div>
+        </div>
+      </div>
+    </details>
+
+    <details className="p-work-item">
+      <summary className="p-work-summary">
+        <span className="p-work-idx">04</span>
+        <span className="p-work-name">Terraform IaC Migration &amp; Cost Optimisation</span>
+        <span className="p-work-tag tag-aws">AWS</span>
+        <span className="p-work-chevron">›</span>
+      </summary>
+      <div className="p-work-body">
+        <div className="p-work-body-inner">
+          <div className="p-work-meta">Mar 2025 — Aug 2025 · Primary DevOps</div>
+          <p className="p-work-desc">Inherited a production AWS environment with no IaC, no state management, and known security gaps. Left it fully Terraform-managed, secured, and cheaper to run.</p>
+          <ul className="p-work-bullets">
+            <li>Migrated all AWS resources to Terraform with Terraform Cloud for remote state and environment isolation. Negligible downtime during migration.</li>
+            <li>Partnered with the security team to audit past incidents and implement preventive IAM controls.</li>
+            <li>Reduced monthly AWS spend by ~$95–100 via right-sizing and cleanup.</li>
+            <li>Moved the on-prem chatbot server from the office to the server room — eliminated recurring accidental disconnections.</li>
+            <li>Delivered a complete handover; incoming engineer appreciated the thoroughness.</li>
+          </ul>
+          <div className="p-work-impact">↑ ~$100/month saved · Zero config drift · Clean security posture</div>
+        </div>
+      </div>
+    </details>
+
+    <details className="p-work-item">
+      <summary className="p-work-summary">
+        <span className="p-work-idx">05</span>
+        <span className="p-work-name">Lightweight RDS Backup Automation</span>
+        <span className="p-work-tag tag-aws">AWS</span>
+        <span className="p-work-chevron">›</span>
+      </summary>
+      <div className="p-work-body">
+        <div className="p-work-body-inner">
+          <div className="p-work-meta">Apr 2025 · Short contract</div>
+          <p className="p-work-desc">Client was paying for daily automated RDS backups on a staging environment that did not need them. Replaced the default behaviour with a purpose-built, native solution.</p>
+          <ul className="p-work-bullets">
+            <li>Disabled built-in backups; implemented monthly snapshot Lambda and quarterly cleanup Lambda retaining the latest snapshot.</li>
+            <li>Scheduled via EventBridge with SNS alerts. Wrote complete manual recovery documentation.</li>
+          </ul>
+          <div className="p-work-impact">↑ Meaningful cost reduction · Simpler, auditable backup workflow</div>
+        </div>
+      </div>
+    </details>
+
+    <details className="p-work-item">
+      <summary className="p-work-summary">
+        <span className="p-work-idx">06</span>
+        <span className="p-work-name">Production Server Management &amp; Deployment Security</span>
+        <span className="p-work-tag tag-linux">Linux</span>
+        <span className="p-work-chevron">›</span>
+      </summary>
+      <div className="p-work-body">
+        <div className="p-work-body-inner">
+          <div className="p-work-meta">Apr 2025 — Ongoing · Two products, Israel-hosted</div>
+          <p className="p-work-desc">Ongoing management of production and staging for two separate products. Minimal setup, stable operations.</p>
+          <ul className="p-work-bullets">
+            <li>Manage deployments and NGINX configurations; coordinate with hosting provider for system-level updates.</li>
+            <li>Resolved CORS and React routing issues from misconfigured NGINX paths.</li>
+            <li>Replaced Git token-based deployment with SSH deploy keys — documented in a one-page team guide, adopted on a separate Azure project for consistency.</li>
+          </ul>
+          <div className="p-work-impact">↑ Stable ops · Improved deployment security · Standardised across projects</div>
+        </div>
+      </div>
+    </details>
+
+    <details className="p-work-item">
+      <summary className="p-work-summary">
+        <span className="p-work-idx">07</span>
+        <span className="p-work-name">SSL, DNS Recovery &amp; Chatbot Stabilisation</span>
+        <span className="p-work-tag tag-multi">AWS + DNS</span>
+        <span className="p-work-chevron">›</span>
+      </summary>
+      <div className="p-work-body">
+        <div className="p-work-body-inner">
+          <div className="p-work-meta">Apr 2025 — Ongoing</div>
+          <p className="p-work-desc">Picked up a production chatbot platform mid-incident — expired SSL, broken auto-renewal, and a domain blocked by a major social platform.</p>
+          <ul className="p-work-bullets">
+            <li>Diagnosed and fixed the failed auto-renewal mechanism; renewed certificates.</li>
+            <li>Resolved a domain blockage that had disrupted chatbot operations.</li>
+            <li>Set up a temporary subdomain for business continuity; decommissioned cleanly after the main domain stabilised.</li>
+            <li>Managed full domain transition to a new subdomain, updating backend and dependent service configurations.</li>
+            <li>Upcoming: scoping migration of chatbot logic from AWS to client's own GCP VM.</li>
+          </ul>
+          <div className="p-work-impact">↑ Production restored with minimal downtime · Client appreciation received</div>
+        </div>
+      </div>
+    </details>
+
+    <details className="p-work-item">
+      <summary className="p-work-summary">
+        <span className="p-work-idx">08</span>
+        <span className="p-work-name">OpenShift CI/CD &amp; Lab Automation</span>
+        <span className="p-work-tag tag-anon">Confidential</span>
+        <span className="p-work-chevron">›</span>
+      </summary>
+      <div className="p-work-body">
+        <div className="p-work-body-inner">
+          <div className="p-work-meta">Apr 2025 — Ongoing · Confidential client</div>
+          <p className="p-work-desc">Working across two internal projects — a completed OpenShift plugin platform and an ongoing lab provisioning system used by around 1000 engineers.</p>
+          <ul className="p-work-bullets">
+            <li>Contributed to a monorepo-based solution enabling consistent developer deployments across internal teams.</li>
+            <li>Implemented GitLab CI pipelines for linting, SonarQube scanning, and container image build/release automation. Supported plugin releases from v0.0.2 to v0.0.24 — stable with minimal maintenance since.</li>
+            <li>Actively migrating RHEL7 Lab Controllers to RHEL9 as part of a vulnerability remediation effort.</li>
+            <li>Automated VPN connection setup — removed manual OTP and credential steps, now single-click.</li>
+            <li>Built a parallel bash script to recover machines marked "Broken" using xargs: fetches a live list from the UI, confirms with the user, processes in parallel. Reduced lookup time from ~1 hour to a few minutes. This operation had been manual for over a decade.</li>
+          </ul>
+          <div className="p-work-impact">↑ Stable infra for ~1000 engineers · Broken-machine recovery: ~1 hr → minutes</div>
+        </div>
+      </div>
+    </details>
+
+  </div>
+</div>
+
+<div className="p-section">
+  <div className="p-section-header">
+    <span className="p-section-num">02</span>
+    <span className="p-section-title">Tools &amp; Stack</span>
+    <div className="p-section-line"></div>
+  </div>
+  <div className="p-skills-grid">
+    <div className="p-skill-group">
+      <div className="p-skill-label">Cloud</div>
+      <div className="p-skill-tags">
+        <span className="p-skill-tag">AWS</span>
+        <span className="p-skill-tag">Azure</span>
+        <span className="p-skill-tag">GCP</span>
+      </div>
+    </div>
+    <div className="p-skill-group">
+      <div className="p-skill-label">IaC</div>
+      <div className="p-skill-tags">
+        <span className="p-skill-tag">Terraform</span>
+        <span className="p-skill-tag">Terraform Cloud</span>
+        <span className="p-skill-tag">Ansible</span>
+        <span className="p-skill-tag">Vagrant</span>
+      </div>
+    </div>
+    <div className="p-skill-group">
+      <div className="p-skill-label">Containers</div>
+      <div className="p-skill-tags">
+        <span className="p-skill-tag">Docker</span>
+        <span className="p-skill-tag">Podman</span>
+        <span className="p-skill-tag">Compose</span>
+        <span className="p-skill-tag">Kubernetes</span>
+      </div>
+    </div>
+    <div className="p-skill-group">
+      <div className="p-skill-label">CI/CD</div>
+      <div className="p-skill-tags">
+        <span className="p-skill-tag">GitLab CI</span>
+        <span className="p-skill-tag">Azure DevOps</span>
+        <span className="p-skill-tag">GitHub Actions</span>
+        <span className="p-skill-tag">SonarQube</span>
+      </div>
+    </div>
+    <div className="p-skill-group">
+      <div className="p-skill-label">AWS Services</div>
+      <div className="p-skill-tags">
+        <span className="p-skill-tag">Lambda</span>
+        <span className="p-skill-tag">EventBridge</span>
+        <span className="p-skill-tag">RDS</span>
+        <span className="p-skill-tag">EC2</span>
+        <span className="p-skill-tag">IAM</span>
+        <span className="p-skill-tag">SNS</span>
+      </div>
+    </div>
+    <div className="p-skill-group">
+      <div className="p-skill-label">Systems</div>
+      <div className="p-skill-tags">
+        <span className="p-skill-tag">Linux</span>
+        <span className="p-skill-tag">Bash</span>
+        <span className="p-skill-tag">Python</span>
+        <span className="p-skill-tag">NGINX</span>
+        <span className="p-skill-tag">systemd</span>
+      </div>
+    </div>
+    <div className="p-skill-group">
+      <div className="p-skill-label">Build</div>
+      <div className="p-skill-tags">
+        <span className="p-skill-tag">CMake</span>
+        <span className="p-skill-tag">Makefile</span>
+        <span className="p-skill-tag">Git</span>
+      </div>
+    </div>
+    <div className="p-skill-group">
+      <div className="p-skill-label">Platforms</div>
+      <div className="p-skill-tags">
+        <span className="p-skill-tag">OpenShift</span>
+        <span className="p-skill-tag">Backstage</span>
+        <span className="p-skill-tag">Hardware Integration Testing</span>
+        <span className="p-skill-tag">PM2</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div className="p-section">
+  <div className="p-section-header">
+    <span className="p-section-num">03</span>
+    <span className="p-section-title">What I care about</span>
+    <div className="p-section-line"></div>
+  </div>
+  <div className="p-focus-grid">
+    <div className="p-focus-card">
+      <div className="p-focus-title">Automation over manual</div>
+      <div className="p-focus-desc">If something is done twice, it gets scripted. VPN setup, snapshot workflows, broken machine recovery — all automated.</div>
+    </div>
+    <div className="p-focus-card">
+      <div className="p-focus-title">Cost-aware decisions</div>
+      <div className="p-focus-desc">Every solution includes a cost analysis. I have excluded approaches specifically because they could not justify their bill.</div>
+    </div>
+    <div className="p-focus-card">
+      <div className="p-focus-title">Documentation that holds up</div>
+      <div className="p-focus-desc">I write docs people actually use. When the old guide does not cut it, I rewrite it from scratch. KTs with no gaps.</div>
+    </div>
+    <div className="p-focus-card">
+      <div className="p-focus-title">Self-healing infrastructure</div>
+      <div className="p-focus-desc">DR that triggers on its own. Pipelines that recover. Monitoring that acts, not just alerts.</div>
+    </div>
+    <div className="p-focus-card">
+      <div className="p-focus-title">Security by default</div>
+      <div className="p-focus-desc">IAM audits, SSH keys replacing tokens, Terraform removing config drift. Not a separate phase — the default.</div>
+    </div>
+    <div className="p-focus-card">
+      <div className="p-focus-title">Clean handovers</div>
+      <div className="p-focus-desc">Systems should be understandable by whoever comes next. Architecture docs, runbooks, annotated Terraform — all part of the job.</div>
+    </div>
+  </div>
+</div>
+
+<div className="p-section">
+  <div className="p-section-header">
+    <span className="p-section-num">04</span>
+    <span className="p-section-title">Personal Infrastructure</span>
+    <div className="p-section-line"></div>
+  </div>
+  <div className="p-infra-card">
+    <div className="p-infra-dot"></div>
+    <div className="p-infra-text">
+      <div className="p-infra-title">Self-hosted GitLab</div>
+      <div className="p-infra-sub">Running on personal hardware, migrating to a Raspberry Pi 5 · <a href="https://gitlab.madhoshyagnik.space" target="_blank" className="p-infra-link">gitlab.madhoshyagnik.space</a></div>
+    </div>
+  </div>
+</div>
+
+<div className="p-footer">
+  <div className="p-footer-note">Client and project names omitted due to confidentiality. All work reflects real production systems and responsibilities.</div>
+  <div className="p-footer-links">
+    <a href="https://github.com/MadhoshYagnik" target="_blank">GitHub ↗</a>
+    <a href="https://www.linkedin.com/in/madhosh/" target="_blank">LinkedIn ↗</a>
+    <a href="https://gitlab.madhoshyagnik.space" target="_blank">GitLab ↗</a>
+  </div>
+</div>
+
+</div>
