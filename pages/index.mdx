@@ -5,14 +5,14 @@ title: " "
 <div id="theme-root" className="theme-light">
 
 <div className="p-topbar">
-  <span className="p-topbar-name">Madhosh Yagnik</span>
+  <span className="p-topbar-name">Portfolio</span>
   <div className="p-topbar-right">
     <div className="p-topbar-links">
       <a href="https://github.com/MadhoshYagnik" target="_blank">GitHub</a>
       <a href="https://www.linkedin.com/in/madhosh/" target="_blank">LinkedIn</a>
       <a href="https://gitlab.madhoshyagnik.space" target="_blank">GitLab</a>
     </div>
-    <button className="p-theme-toggle" id="themeToggle" aria-label="Toggle theme" onClick={() => { const r = document.getElementById('theme-root'); const b = document.getElementById('themeToggle'); if (r.classList.contains('theme-light')) { r.classList.replace('theme-light','theme-dark'); b.textContent='Light mode'; } else { r.classList.replace('theme-dark','theme-light'); b.textContent='Dark mode'; } }}>Dark mode</button>
+    <button className="p-theme-toggle" id="themeToggle" aria-label="Toggle theme" onclick="var r=document.getElementById('theme-root');var b=document.getElementById('themeToggle');if(r.classList.contains('theme-light')){r.classList.replace('theme-light','theme-dark');b.textContent='Light mode';}else{r.classList.replace('theme-dark','theme-light');b.textContent='Dark mode';}">Dark mode</button>
   </div>
 </div>
 
