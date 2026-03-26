@@ -406,8 +406,14 @@ title: " "
   var root = document.getElementById('theme-root');
   var btn  = document.getElementById('themeToggle');
   if (root && btn) {
-    var saved = localStorage.getItem('portfolio-theme') || 'theme-light';
-    root.className = saved;
+    var saved = 'theme-light';
+    try {
+      saved = localStorage.getItem('portfolio-theme') || 'theme-light';
+    } catch (e) {}
+    
+    requestAnimationFrame(() => {
+      root.className = saved;
+    });
     btn.textContent = saved === 'theme-dark' ? 'Light mode' : 'Dark mode';
 
     btn.addEventListener('click', function() {
