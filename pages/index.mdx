@@ -402,41 +402,45 @@ title: " "
 
 <script dangerouslySetInnerHTML={{__html: `
 (function() {
-  // Theme toggle
-  var root = document.getElementById('theme-root');
-  var btn  = document.getElementById('themeToggle');
-  if (root && btn) {
-    var saved = 'theme-light';
-    try {
-      saved = localStorage.getItem('portfolio-theme') || 'theme-light';
-    } catch (e) {}
-    
-    requestAnimationFrame(() => {
+  document.addEventListener('DOMContentLoaded', function() {
+
+    // Theme toggle
+    var root = document.getElementById('theme-root');
+    var btn  = document.getElementById('themeToggle');
+
+    if (root && btn) {
+      var saved = 'theme-light';
+      try {
+        saved = localStorage.getItem('portfolio-theme') || 'theme-light';
+      } catch (e) {}
+
       root.className = saved;
-    });
-    btn.textContent = saved === 'theme-dark' ? 'Light mode' : 'Dark mode';
+      btn.textContent = saved === 'theme-dark' ? 'Light mode' : 'Dark mode';
 
-    btn.addEventListener('click', function() {
-      if (root.classList.contains('theme-light')) {
-        root.classList.replace('theme-light', 'theme-dark');
-        btn.textContent = 'Light mode';
-        localStorage.setItem('portfolio-theme', 'theme-dark');
-      } else {
-        root.classList.replace('theme-dark', 'theme-light');
-        btn.textContent = 'Dark mode';
-        localStorage.setItem('portfolio-theme', 'theme-light');
-      }
-    });
-  }
+      btn.addEventListener('click', function() {
+        if (root.classList.contains('theme-light')) {
+          root.classList.replace('theme-light', 'theme-dark');
+          btn.textContent = 'Light mode';
+          try { localStorage.setItem('portfolio-theme', 'theme-dark'); } catch(e){}
+        } else {
+          root.classList.replace('theme-dark', 'theme-light');
+          btn.textContent = 'Dark mode';
+          try { localStorage.setItem('portfolio-theme', 'theme-light'); } catch(e){}
+        }
+      });
+    }
 
-  // Mobile terminal toggle
-  var termBtn  = document.getElementById('termToggle');
-  var termBody = document.getElementById('termBody');
-  if (termBtn && termBody) {
-    termBtn.addEventListener('click', function() {
-      var isOpen = termBody.classList.toggle('term-open');
-      termBtn.classList.toggle('term-open', isOpen);
-    });
-  }
+    // Mobile terminal toggle
+    var termBtn  = document.getElementById('termToggle');
+    var termBody = document.getElementById('termBody');
+
+    if (termBtn && termBody) {
+      termBtn.addEventListener('click', function() {
+        var isOpen = termBody.classList.toggle('term-open');
+        termBtn.classList.toggle('term-open', isOpen);
+      });
+    }
+
+  });
 })();
 `}} />
