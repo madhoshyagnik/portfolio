@@ -108,7 +108,12 @@ article p {
   color: var(--text);
   min-height: 100vh;
   padding-bottom: 96px;
+  overflow-x: hidden;
   transition: background-color 0.35s ease, color 0.35s ease;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
 }
 
 #theme-root > div {
@@ -275,6 +280,8 @@ article p {
   border-radius: 8px;
   overflow: hidden;
   width: fit-content;
+  max-width: 100%;
+  box-sizing: border-box;
   box-shadow: var(--shadow);
   transition: box-shadow 0.2s;
 }
@@ -375,6 +382,22 @@ article p {
   display: flex;
   flex-direction: column;
   gap: 1px;
+  /* mobile collapse handled via responsive block */
+}
+
+/* arrow span — defined globally so it exists at all breakpoints */
+.p-term-toggle-arrow {
+  margin-left: auto;
+  font-size: 14px;
+  opacity: 0.45;
+  line-height: 1;
+  transition: transform 0.28s cubic-bezier(0.4,0,0.2,1), opacity 0.2s;
+  display: inline-block;
+}
+
+.p-term-toggle.term-open .p-term-toggle-arrow {
+  transform: rotate(90deg);
+  opacity: 0.7;
 }
 
 @keyframes termLine {
@@ -416,27 +439,23 @@ article p {
 
 @keyframes blink { 50% { opacity: 0; } }
 
-/* mobile terminal toggle */
+/* mobile terminal toggle — sits inside the terminal, above the body */
 .p-term-toggle {
   display: none;
   width: 100%;
-  background: var(--bg2);
-  border: 1px solid var(--border);
-  border-radius: 7px;
-  padding: 10px 14px;
+  background: transparent;
+  border: none;
+  border-top: 1px solid #1e2738;
+  padding: 8px 14px 8px 18px;
   font-family: 'JetBrains Mono', monospace;
-  font-size: 11px;
-  color: var(--text-dim);
+  font-size: 10.5px;
+  color: #4a5a6e;
   cursor: pointer;
   text-align: left;
-  letter-spacing: 0.04em;
-  transition: border-color 0.2s, color 0.2s;
-  margin-bottom: 0;
-}
-
-.p-term-toggle:hover {
-  border-color: var(--border2);
-  color: var(--accent);
+  letter-spacing: 0.05em;
+  transition: color 0.2s, background 0.2s;
+  align-items: center;
+  gap: 8px;
 }
 
 /* ═══════════════════════════════════════
@@ -876,9 +895,22 @@ details.p-work-item[open] .p-work-body {
   color: var(--text-dim);
   text-decoration: none;
   transition: color 0.15s;
+  position: relative;
+}
+
+.p-footer-links a::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 0;
+  height: 1px;
+  background: var(--accent);
+  transition: width 0.2s ease;
 }
 
 .p-footer-links a:hover { color: var(--accent); }
+.p-footer-links a:hover::after { width: 100%; }
 
 /* ═══════════════════════════════════════
    PAGE FADE IN
@@ -902,42 +934,39 @@ details.p-work-item[open] .p-work-body {
     gap: 0;
   }
 
-  /* On mobile: terminal becomes a collapsible drawer below the hero content */
+  /* Terminal sits below hero content, collapsed by default */
   .p-terminal {
-    margin-top: 20px;
+    margin-top: 18px;
     border-radius: 8px;
   }
 
+  /* Show the toggle row */
   .p-term-toggle {
     display: flex;
-    align-items: center;
-    gap: 8px;
-    margin-top: 16px;
-    margin-bottom: 0;
   }
 
-  .p-term-toggle::before {
-    content: '';
-    width: 8px;
-    height: 8px;
-    border-radius: 50%;
-    background: #28c840;
-    flex-shrink: 0;
-    box-shadow: 0 0 6px #28c840;
+  .p-term-toggle:hover {
+    color: #6b85a0;
+    background: rgba(255,255,255,0.025);
   }
 
-  .p-terminal {
+  /* Body collapsed by default — override base padding with !important */
+  .p-term-body {
     max-height: 0;
     overflow: hidden;
-    transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.3s ease;
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
     opacity: 0;
-    pointer-events: none;
+    transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+                opacity 0.3s ease;
   }
 
-  .p-terminal.term-open {
-    max-height: 380px;
+  /* Body open state */
+  .p-term-body.term-open {
+    max-height: 480px;
+    padding-top: 16px !important;
+    padding-bottom: 22px !important;
     opacity: 1;
-    pointer-events: auto;
   }
 }
 
@@ -951,11 +980,34 @@ details.p-work-item[open] .p-work-body {
   }
 
   .p-topbar-links { display: none; }
-  .p-name { font-size: 1.95rem !important; }
-  .p-work-body-inner { padding-left: 18px; }
-  .p-stats { width: 100%; }
+  .p-name { font-size: 1.9rem !important; }
+  .p-work-body-inner { padding-left: 16px; }
 
+  /* Stats: full width, each cell equal, centred, compact */
+  .p-stats {
+    width: 100%;
+  }
+
+  .p-stat {
+    flex: 1;
+    padding: 11px 8px;
+    align-items: center;
+    text-align: center;
+  }
+
+  .p-stat-num {
+    font-size: 1rem;
+  }
+
+  .p-stat-label {
+    font-size: 9px;
+  }
+
+  /* Hide "tap to expand" hint — redundant on mobile */
   .p-section-hint { display: none; }
+
+  /* Hide work tag labels on narrow screens to save space */
+  .p-work-tag { display: none; }
 
   .p-focus-grid {
     grid-template-columns: 1fr 1fr;

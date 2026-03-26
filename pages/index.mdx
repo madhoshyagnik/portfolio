@@ -39,7 +39,6 @@ title: " "
       </div>
     </div>
   </div>
-  <button className="p-term-toggle" id="termToggle">profile.json — tap to expand</button>
   <div className="p-terminal" id="terminalPanel">
     <div className="p-term-bar">
       <span className="p-term-dot dot-red"></span>
@@ -47,7 +46,8 @@ title: " "
       <span className="p-term-dot dot-green"></span>
       <span className="p-term-title">madhosh ~ whoami</span>
     </div>
-    <div className="p-term-body">
+    <button className="p-term-toggle" id="termToggle">cat profile.json<span className="p-term-toggle-arrow">›</span></button>
+    <div className="p-term-body" id="termBody">
       <div className="p-term-line tl-1"><span className="t-prompt">$</span><span className="t-cmd"> cat profile.json</span></div>
       <div className="p-term-line t-out tl-2"><span className="t-key">cloud</span><span className="t-val">AWS · Azure · GCP</span></div>
       <div className="p-term-line t-out tl-3"><span className="t-key">iac</span><span className="t-val">Terraform + Terraform Cloud</span></div>
@@ -424,12 +424,12 @@ title: " "
   }
 
   // Mobile terminal toggle
-  var termBtn   = document.getElementById('termToggle');
-  var termPanel = document.getElementById('terminalPanel');
-  if (termBtn && termPanel) {
+  var termBtn  = document.getElementById('termToggle');
+  var termBody = document.getElementById('termBody');
+  if (termBtn && termBody) {
     termBtn.addEventListener('click', function() {
-      var isOpen = termPanel.classList.toggle('term-open');
-      termBtn.textContent = isOpen ? 'profile.json — tap to collapse' : 'profile.json — tap to expand';
+      var isOpen = termBody.classList.toggle('term-open');
+      termBtn.classList.toggle('term-open', isOpen);
     });
   }
 })();
