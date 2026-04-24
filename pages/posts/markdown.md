@@ -28,7 +28,7 @@ _This is italic text_
 
 ## Blockquotes
 
-> Develop. Preview. Ship. – Vercel
+> Develop. Preview. Ship. - Vercel
 
 ## Lists
 

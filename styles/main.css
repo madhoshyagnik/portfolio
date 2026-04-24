@@ -329,12 +329,11 @@ article p {
 .dot-green  { background: #28c840; }
 
 .p-term-title {
-  font-size: 11px;
+  font-size: 12px;
   color: var(--term-text);
-  opacity: 0.95;
   margin-left: 8px;
   letter-spacing: 0.05em;
-  font-weight: 500;
+  font-weight: 600;
 }
 
 .p-term-body {
@@ -543,6 +542,10 @@ details.p-work-item[open] .p-work-chevron {
   flex-shrink: 0;
   background: transparent !important;
   padding: 0 !important;
+  margin: 0 !important;
+  display: inline-block;
+  box-shadow: none !important;
+  border-radius: 0 !important;
 }
 
 .p-work-impact {
@@ -593,22 +596,13 @@ details.p-work-item[open] .p-work-chevron {
   transform: translateY(-4px);
 }
 
-.p-skill-label {
+.p-skill-label, .p-focus-title {
   font-size: 13px;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.12em;
   color: var(--accent);
   margin-bottom: 20px;
-}
-
-.p-focus-title {
-  font-size: 12px;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  color: var(--accent);
-  margin-bottom: 12px;
 }
 
 .p-skill-tags {
@@ -713,7 +707,7 @@ details.p-work-item[open] .p-work-chevron {
 .p-footer  { animation: fadeUp 0.5s ease both 0.2s; }
 
 /* ═══════════════════════════════════════
-   RESPONSIVE — TABLET
+   RESPONSIVE - TABLET
 ═══════════════════════════════════════ */
 @media (max-width: 720px) {
   .p-hero {
@@ -730,7 +724,7 @@ details.p-work-item[open] .p-work-chevron {
 }
 
 /* ═══════════════════════════════════════
-   RESPONSIVE — MOBILE
+   RESPONSIVE - MOBILE
 ═══════════════════════════════════════ */
 @media (max-width: 600px) {
   #theme-root > div {
@@ -762,7 +756,7 @@ details.p-work-item[open] .p-work-chevron {
     font-size: 9px;
   }
 
-  /* Hide "tap to expand" hint — redundant on mobile */
+  /* Hide "tap to expand" hint - redundant on mobile */
   .p-section-hint { display: none; }
 
   /* Hide work tag labels on narrow screens to save space */

@@ -25,7 +25,7 @@ import WorkItem from '../components/WorkItem'
     <div className="p-eyebrow">DevOps Engineer</div>
     <h1 className="p-name text-gradient">Madhosh Yagnik</h1>
     <div className="p-name-rule"></div>
-    <p className="p-desc">Production infrastructure across AWS and Azure — IaC migrations, CI/CD pipelines, and automation that replaces slow manual work. I care about systems that are reliable, cost-efficient, and easy for the next person to understand.</p>
+    <p className="p-desc">Production infrastructure across AWS and Azure - IaC migrations, CI/CD pipelines, and automation that replaces slow manual work. I care about systems that are reliable, cost-efficient, and easy for the next person to understand.</p>
     <div className="p-stats">
       <div className="p-stat">
         <span className="p-stat-num">8+</span>
@@ -59,13 +59,13 @@ import WorkItem from '../components/WorkItem'
       name="AWS Disaster Recovery & Infrastructure Automation" 
       tag="AWS" 
       tagClass="tag-aws"
-      meta="Oct 2024 — Mar 2025 · Singapore-based bank"
+      meta="Oct 2024 - Mar 2025 · Singapore-based bank"
       desc="Designed and delivered multiple DR and infrastructure automation solutions for a production banking environment. Every decision was weighed against cost."
       bullets={[
         "Migrated Bastion servers from CentOS 7 (EOL) to Ubuntu 24.04 LTS with no service disruption. Rewrote the setup guide for Debian and YUM-based distros.",
         "Built a cost-effective DR system: EventBridge + Lambda for automated RDS snapshots, cross-region copy, and health-monitored auto-recovery if primary failed.",
         "Developed a parallel EC2 DR solution with AMI rotation, cross-region copy, auto-launch on health check failure, and SNS alerting.",
-        "Evaluated AWS Read Replicas and DMS; excluded both on cost grounds after full POC — documented the decision with analysis.",
+        "Evaluated AWS Read Replicas and DMS; excluded both on cost grounds after full POC - documented the decision with analysis.",
         "Resolved urgent Bitbucket pipeline failures and stabilised CI/CD long-term.",
         "Recovered access to a Windows EC2 instance after the private key was lost."
       ]}
@@ -74,13 +74,13 @@ import WorkItem from '../components/WorkItem'
 
     <WorkItem 
       index="02" 
-      name="DevOps Backlog — Docker, CMake, Makefile, Git, Linux" 
+      name="DevOps Backlog - Docker, CMake, Makefile, Git, Linux" 
       tag="Linux" 
       tagClass="tag-linux"
-      meta="Dec 2024 — Jan 2025 · Contract"
-      desc="Cleared a backlog of 72 DevOps tasks across Docker, Linux, Git, Makefile, and CMake — 64 accepted on first review."
+      meta="Dec 2024 - Jan 2025 · Contract"
+      desc="Cleared a backlog of 72 DevOps tasks across Docker, Linux, Git, Makefile, and CMake - 64 accepted on first review."
       bullets={[
-        "Picked up CMake and Makefile tasks while learning both tools in parallel — no blocked work or delays.",
+        "Picked up CMake and Makefile tasks while learning both tools in parallel - no blocked work or delays.",
         "Daily stand-up transparency with clear progress tracking throughout."
       ]}
       impact="↑ 64 / 72 tasks accepted · Full delivery satisfaction"
@@ -91,12 +91,12 @@ import WorkItem from '../components/WorkItem'
       name="Full Azure Migration & CI/CD Pipeline" 
       tag="Azure" 
       tagClass="tag-azure"
-      meta="Feb 2025 — Mar 2025 · Primary DevOps resource"
+      meta="Feb 2025 - Mar 2025 · Primary DevOps resource"
       desc="Took a project running entirely on local setups and brought it to a production-ready Azure deployment in one month."
       bullets={[
         "Migrated full stack to Azure Cloud, resolving routing and network configuration issues along the way.",
-        "Iterated CI/CD across three approaches — GH Actions, Azure DevOps via SSH, and finally an Azure agent-based pipeline with client-approved security controls.",
-        "Optimised the frontend Dockerfile to serve static files — load time dropped from seconds to milliseconds.",
+        "Iterated CI/CD across three approaches - GH Actions, Azure DevOps via SSH, and finally an Azure agent-based pipeline with client-approved security controls.",
+        "Optimised the frontend Dockerfile to serve static files - load time dropped from seconds to milliseconds.",
         "Dockerized all services; created Docker Compose stacks for consistent local and cloud environments.",
         "Added systemd services and cron jobs for self-starting apps at VM boot."
       ]}
@@ -108,13 +108,13 @@ import WorkItem from '../components/WorkItem'
       name="Terraform IaC Migration & Cost Optimisation" 
       tag="AWS" 
       tagClass="tag-aws"
-      meta="Mar 2025 — Aug 2025 · Primary DevOps"
+      meta="Mar 2025 - Aug 2025 · Primary DevOps"
       desc="Inherited a production AWS environment with no IaC, no state management, and known security gaps. Left it fully Terraform-managed, secured, and cheaper to run."
       bullets={[
         "Migrated all AWS resources to Terraform with Terraform Cloud for remote state and environment isolation. Negligible downtime during migration.",
         "Partnered with the security team to audit past incidents and implement preventive IAM controls.",
-        "Reduced monthly AWS spend by ~$95–100 via right-sizing and cleanup.",
-        "Moved the on-prem chatbot server from the office to the server room — eliminated recurring accidental disconnections.",
+        "Reduced monthly AWS spend by ~$95-100 via right-sizing and cleanup.",
+        "Moved the on-prem chatbot server from the office to the server room - eliminated recurring accidental disconnections.",
         "Delivered a complete handover; incoming engineer appreciated the thoroughness."
       ]}
       impact="↑ ~$100/month saved · Zero config drift · Clean security posture"
@@ -139,12 +139,12 @@ import WorkItem from '../components/WorkItem'
       name="Production Server Management & Deployment Security" 
       tag="Linux" 
       tagClass="tag-linux"
-      meta="Apr 2025 — Ongoing · Two products, Israel-hosted"
+      meta="Apr 2025 - Ongoing · Two products, Israel-hosted"
       desc="Ongoing management of production and staging for two separate products. Minimal setup, stable operations."
       bullets={[
         "Manage deployments and NGINX configurations; coordinate with hosting provider for system-level updates.",
         "Resolved CORS and React routing issues from misconfigured NGINX paths.",
-        "Replaced Git token-based deployment with SSH deploy keys — documented in a one-page team guide, adopted on a separate Azure project for consistency."
+        "Replaced Git token-based deployment with SSH deploy keys - documented in a one-page team guide, adopted on a separate Azure project for consistency."
       ]}
       impact="↑ Stable ops · Improved deployment security · Standardised across projects"
     />
@@ -154,8 +154,8 @@ import WorkItem from '../components/WorkItem'
       name="SSL, DNS Recovery & Chatbot Stabilisation" 
       tag="AWS + DNS" 
       tagClass="tag-multi"
-      meta="Apr 2025 — Ongoing"
-      desc="Picked up a production chatbot platform mid-incident — expired SSL, broken auto-renewal, and a domain blocked by a major social platform."
+      meta="Apr 2025 - Ongoing"
+      desc="Picked up a production chatbot platform mid-incident - expired SSL, broken auto-renewal, and a domain blocked by a major social platform."
       bullets={[
         "Diagnosed and fixed the failed auto-renewal mechanism; renewed certificates.",
         "Resolved a domain blockage that had disrupted chatbot operations.",
@@ -171,13 +171,13 @@ import WorkItem from '../components/WorkItem'
       name="OpenShift CI/CD & Lab Automation" 
       tag="Confidential" 
       tagClass="tag-anon"
-      meta="Apr 2025 — Ongoing · Confidential client"
-      desc="Working across two internal projects — a completed OpenShift plugin platform and an ongoing lab provisioning system used by around 1000 engineers."
+      meta="Apr 2025 - Ongoing · Confidential client"
+      desc="Working across two internal projects - a completed OpenShift plugin platform and an ongoing lab provisioning system used by around 1000 engineers."
       bullets={[
         "Contributed to a monorepo-based solution enabling consistent developer deployments across internal teams.",
-        "Implemented GitLab CI pipelines for linting, SonarQube scanning, and container image build/release automation. Supported plugin releases from v0.0.2 to v0.0.24 — stable with minimal maintenance since.",
+        "Implemented GitLab CI pipelines for linting, SonarQube scanning, and container image build/release automation. Supported plugin releases from v0.0.2 to v0.0.24 - stable with minimal maintenance since.",
         "Actively migrating RHEL7 Lab Controllers to RHEL9 as part of a vulnerability remediation effort.",
-        "Automated VPN connection setup — removed manual OTP and credential steps, now single-click.",
+        "Automated VPN connection setup - removed manual OTP and credential steps, now single-click.",
         "Built a parallel bash script to recover machines marked 'Broken' using xargs: fetches a live list from the UI, confirms with the user, processes in parallel. Reduced lookup time from ~1 hour to a few minutes. This operation had been manual for over a decade."
       ]}
       impact="↑ Stable infra for ~1000 engineers · Broken-machine recovery: ~1 hr → minutes"
@@ -278,7 +278,7 @@ import WorkItem from '../components/WorkItem'
     <div className="p-focus-card">
       <div className="p-focus-icon">⚙</div>
       <div className="p-focus-title">Automation over manual</div>
-      <div className="p-focus-desc">If something is done twice, it gets scripted. VPN setup, snapshot workflows, broken machine recovery — all automated.</div>
+      <div className="p-focus-desc">If something is done twice, it gets scripted. VPN setup, snapshot workflows, broken machine recovery - all automated.</div>
     </div>
     <div className="p-focus-card">
       <div className="p-focus-icon">$</div>
@@ -298,12 +298,12 @@ import WorkItem from '../components/WorkItem'
     <div className="p-focus-card">
       <div className="p-focus-icon">🔒</div>
       <div className="p-focus-title">Security by default</div>
-      <div className="p-focus-desc">IAM audits, SSH keys replacing tokens, Terraform removing config drift. Not a separate phase — the default.</div>
+      <div className="p-focus-desc">IAM audits, SSH keys replacing tokens, Terraform removing config drift. Not a separate phase - the default.</div>
     </div>
     <div className="p-focus-card">
       <div className="p-focus-icon">→</div>
       <div className="p-focus-title">Clean handovers</div>
-      <div className="p-focus-desc">Systems should be understandable by whoever comes next. Architecture docs, runbooks, annotated Terraform — all part of the job.</div>
+      <div className="p-focus-desc">Systems should be understandable by whoever comes next. Architecture docs, runbooks, annotated Terraform - all part of the job.</div>
     </div>
   </div>
 </div>
