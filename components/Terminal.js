@@ -15,7 +15,7 @@ export default function Terminal() {
         className={`p-term-toggle ${isOpen ? 'term-open' : ''}`} 
         onClick={() => setIsOpen(!isOpen)}
       >
-        cat profile.json<span className="p-term-toggle-arrow">›</span>
+        ls profile.json<span className="p-term-toggle-arrow">›</span>
       </button>
       <div className={`p-term-body ${isOpen ? 'term-open' : ''}`}>
         <div className="p-term-line tl-1"><span className="t-prompt">$</span><span className="t-cmd"> cat profile.json</span></div>
