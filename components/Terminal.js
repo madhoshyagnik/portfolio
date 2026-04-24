@@ -1,23 +1,13 @@
-import { useState } from 'react'
-
 export default function Terminal() {
-  const [isOpen, setIsOpen] = useState(false)
-
   return (
-    <div className="p-terminal" id="terminalPanel">
+    <div className="p-terminal">
       <div className="p-term-bar">
         <span className="p-term-dot dot-red"></span>
         <span className="p-term-dot dot-yellow"></span>
         <span className="p-term-dot dot-green"></span>
         <span className="p-term-title">madhosh ~ whoami</span>
       </div>
-      <button 
-        className={`p-term-toggle ${isOpen ? 'term-open' : ''}`} 
-        onClick={() => setIsOpen(!isOpen)}
-      >
-        ls profile.json<span className="p-term-toggle-arrow">›</span>
-      </button>
-      <div className={`p-term-body ${isOpen ? 'term-open' : ''}`}>
+      <div className="p-term-body">
         <div className="p-term-line tl-1"><span className="t-prompt">$</span><span className="t-cmd"> cat profile.json</span></div>
         <div className="p-term-line t-out tl-2"><span className="t-key">cloud</span><span className="t-val">AWS · Azure · GCP</span></div>
         <div className="p-term-line t-out tl-3"><span className="t-key">iac</span><span className="t-val">Terraform . Terraform Cloud . Ansible</span></div>

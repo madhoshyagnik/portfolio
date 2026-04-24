@@ -480,6 +480,8 @@ details.p-work-item[open] .p-work-name {
 .tag-aws   { background: rgba(245, 158, 11, 0.1); color: var(--orange); }
 .tag-azure { background: rgba(99, 102, 241, 0.1); color: var(--accent); }
 .tag-linux { background: rgba(234, 179, 8, 0.1); color: var(--yellow); }
+.tag-multi { background: rgba(16, 185, 129, 0.1); color: var(--green); }
+.tag-anon  { background: var(--bg3); color: var(--text-mut); border: 1px solid var(--border); }
 
 .p-work-chevron {
   font-size: 18px;
@@ -609,7 +611,7 @@ details.p-work-item[open] .p-work-chevron {
 }
 
 .p-focus-icon {
-  font-size: 32px;
+  font-size: 20px;
   margin-bottom: 20px;
 }
 
@@ -696,39 +698,10 @@ details.p-work-item[open] .p-work-chevron {
     gap: 0;
   }
 
-  /* Terminal sits below hero content, collapsed by default */
+  /* Terminal sits below hero content */
   .p-terminal {
     margin-top: 18px;
     border-radius: 8px;
-  }
-
-  /* Show the toggle row */
-  .p-term-toggle {
-    display: flex;
-  }
-
-  .p-term-toggle:hover {
-    color: #6b85a0;
-    background: rgba(255,255,255,0.025);
-  }
-
-  /* Body collapsed by default — override base padding with !important */
-  .p-term-body {
-    max-height: 0;
-    overflow: hidden;
-    padding-top: 0 !important;
-    padding-bottom: 0 !important;
-    opacity: 0;
-    transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1),
-                opacity 0.3s ease;
-  }
-
-  /* Body open state */
-  .p-term-body.term-open {
-    max-height: 480px;
-    padding-top: 16px !important;
-    padding-bottom: 22px !important;
-    opacity: 1;
   }
 }
 
