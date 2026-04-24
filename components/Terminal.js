@@ -42,7 +42,8 @@ export default function Terminal() {
       }
       setInput('')
     } else if (e.key === ' ') {
-      e.preventDefault() // Stop page scroll and don't add to input
+      e.preventDefault() // Stop page scroll
+      setInput((prev) => prev + ' ') // But still add the space to our input
     } else if (e.key === 'Backspace') {
       setInput((prev) => prev.slice(0, -1))
     } else if (e.key.length === 1) {
