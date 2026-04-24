@@ -362,6 +362,7 @@ article p {
 .t-key    { color: var(--term-mut); min-width: 110px; display: inline-block; }
 .t-val    { color: var(--term-dim); }
 .t-green  { color: var(--green); }
+.t-accent { color: var(--accent); font-weight: 600; }
 
 .t-cursor {
   color: var(--accent);
