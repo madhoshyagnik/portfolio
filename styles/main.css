@@ -330,9 +330,11 @@ article p {
 
 .p-term-title {
   font-size: 11px;
-  color: var(--text-mut);
+  color: var(--term-text);
+  opacity: 0.95;
   margin-left: 8px;
   letter-spacing: 0.05em;
+  font-weight: 500;
 }
 
 .p-term-body {
@@ -539,6 +541,8 @@ details.p-work-item[open] .p-work-chevron {
   color: var(--accent);
   font-weight: 700;
   flex-shrink: 0;
+  background: transparent !important;
+  padding: 0 !important;
 }
 
 .p-work-impact {
@@ -589,13 +593,22 @@ details.p-work-item[open] .p-work-chevron {
   transform: translateY(-4px);
 }
 
-.p-skill-label, .p-focus-title {
+.p-skill-label {
   font-size: 13px;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.12em;
   color: var(--accent);
   margin-bottom: 20px;
+}
+
+.p-focus-title {
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--accent);
+  margin-bottom: 12px;
 }
 
 .p-skill-tags {
@@ -627,14 +640,8 @@ details.p-work-item[open] .p-work-chevron {
 }
 
 .p-focus-icon {
-  font-size: 20px;
-  margin-bottom: 20px;
-}
-
-.p-focus-title {
-  color: var(--text);
-  font-size: 18px;
-  margin-bottom: 12px;
+  font-size: 24px;
+  margin-bottom: 16px;
 }
 
 .p-focus-desc {
