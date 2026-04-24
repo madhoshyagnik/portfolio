@@ -1,10 +1,53 @@
 import { useState, useEffect, useRef } from 'react'
 
 const SPINNER_VERBS = [
-  'Provisioning', 'Deploying', 'Compiling', 'Optimizing', 'Encrypting', 
-  'Scaling', 'Synchronizing', 'Authenticating', 'Bootstrapping', 'Fetching', 
-  'Patching', 'Scanning', 'Resolving', 'Validating', 'Orchestrating', 
-  'Propagating', 'Migrating', 'Initializing', 'Reconciling', 'Indexing'
+  'Accomplishing', 'Actioning', 'Actualizing', 'Architecting', 'Baking', 'Beaming', "Beboppin'",
+  'Befuddling', 'Billowing', 'Blanching', 'Bloviating', 'Boogieing', 'Boondoggling', 'Booping',
+  'Bootstrapping', 'Brewing', 'Bunning', 'Burrowing', 'Calculating', 'Canoodling', 'Caramelizing',
+  'Cascading', 'Catapulting', 'Cerebrating', 'Channeling', 'Channelling', 'Choreographing',
+  'Churning', 'Clauding', 'Coalescing', 'Cogitating', 'Combobulating', 'Composing', 'Computing',
+  'Concocting', 'Considering', 'Contemplating', 'Cooking', 'Crafting', 'Creating', 'Crunching',
+  'Crystallizing', 'Cultivating', 'Deciphering', 'Deliberating', 'Determining', 'Dilly-dallying',
+  'Discombobulating', 'Doing', 'Doodling', 'Drizzling', 'Ebbing', 'Effecting', 'Elucidating',
+  'Embellishing', 'Enchanting', 'Envisioning', 'Evaporating', 'Fermenting', 'Fiddle-faddling',
+  'Finagling', 'Flambéing', 'Flibbertigibbeting', 'Flowing', 'Flummoxing', 'Fluttering', 'Forging',
+  'Forming', 'Frolicking', 'Frosting', 'Gallivanting', 'Galloping', 'Garnishing', 'Generating',
+  'Gesticulating', 'Germinating', 'Gitifying', 'Grooving', 'Gusting', 'Harmonizing', 'Hashing',
+  'Hatching', 'Herding', 'Honking', 'Hullaballooing', 'Hyperspacing', 'Ideating', 'Imagining',
+  'Improvising', 'Incubating', 'Inferring', 'Infusing', 'Ionizing', 'Jitterbugging', 'Julienning',
+  'Kneading', 'Leavening', 'Levitating', 'Lollygagging', 'Manifesting', 'Marinating', 'Meandering',
+  'Metamorphosing', 'Misting', 'Moonwalking', 'Moseying', 'Mulling', 'Mustering', 'Musing',
+  'Nebulizing', 'Nesting', 'Newspapering', 'Noodling', 'Nucleating', 'Orbiting', 'Orchestrating',
+  'Osmosing', 'Perambulating', 'Percolating', 'Perusing', 'Philosophising', 'Photosynthesizing',
+  'Pollinating', 'Pondering', 'Pontificating', 'Pouncing', 'Precipitating', 'Prestidigitating',
+  'Processing', 'Proofing', 'Propagating', 'Puttering', 'Puzzling', 'Quantumizing', 'Razzle-dazzling',
+  'Razzmatazzing', 'Recombobulating', 'Reticulating', 'Roosting', 'Ruminating', 'Sautéing',
+  'Scampering', 'Schlepping', 'Scurrying', 'Seasoning', 'Shenaniganing', 'Shimmying', 'Simmering',
+  'Skedaddling', 'Sketching', 'Slithering', 'Smooshing', 'Sock-hopping', 'Spelunking', 'Spinning',
+  'Sprouting', 'Stewing', 'Sublimating', 'Swirling', 'Swooping', 'Symbioting', 'Synthesizing',
+  'Tempering', 'Thinking', 'Thundering', 'Tinkering', 'Tomfoolering', 'Topsy-turvying',
+  'Transfiguring', 'Transmuting', 'Twisting', 'Undulating', 'Unfurling', 'Unravelling', 'Vibing',
+  'Waddling', 'Wandering', 'Warping', 'Whatchamacalliting', 'Whirlpooling', 'Whirring', 'Whisking',
+  'Wibbling', 'Working', 'Wrangling', 'Zesting', 'Zigzagging'
+]
+
+const LINUX_RESPONSES = [
+  'Applied configuration to /etc/network/interfaces',
+  'Kernel panic avoided. Carrying on.',
+  'PID 4102 terminated successfully.',
+  'Artifacts deployed to /usr/local/bin',
+  'Segmentation fault? Just kidding. Done.',
+  'Permission granted. Root access simulated.',
+  'Garbage collection complete. 402MB freed.',
+  'Buffer overflow suppressed.',
+  'Entry added to /var/log/syslog',
+  'Daemon restarted in background mode.',
+  'Container ID 7f3a9e2d synchronized.',
+  'Volume mounted at /mnt/data',
+  'Synchronized with upstream origin/main',
+  'Successfully rebased onto experimental-v5',
+  'Warning: System heat stable. Logic continuing.',
+  'Memory leak plugged. Resources optimized.'
 ]
 
 const SPINNER_CHARS = ['⠋', '⠙', '⠹', '⠸', '⠼', '⠴', '⠦', '⠧', '⠇', '⠏']
@@ -19,7 +62,6 @@ export default function Terminal() {
   const terminalRef = useRef(null)
 
   useEffect(() => {
-    // Only enable interactive terminal for desktop/mouse users
     setIsDesktop(window.matchMedia('(pointer: fine)').matches)
   }, [])
 
@@ -42,8 +84,8 @@ export default function Terminal() {
       }
       setInput('')
     } else if (e.key === ' ') {
-      e.preventDefault() // Stop page scroll
-      setInput((prev) => prev + ' ') // But still add the space to our input
+      e.preventDefault()
+      setInput((prev) => prev + ' ')
     } else if (e.key === 'Backspace') {
       setInput((prev) => prev.slice(0, -1))
     } else if (e.key.length === 1) {
@@ -56,24 +98,21 @@ export default function Terminal() {
     const verb = SPINNER_VERBS[Math.floor(Math.random() * SPINNER_VERBS.length)]
     setCurrentVerb(verb)
 
-    // Add command to history immediately
     setStateHistory((prev) => [...prev, { type: 'cmd', text: cmd }])
 
-    // Simulate work
     setTimeout(() => {
       setIsProcessing(false)
+      const linuxMsg = LINUX_RESPONSES[Math.floor(Math.random() * LINUX_RESPONSES.length)]
       setStateHistory((prev) => [
         ...prev, 
-        { type: 'result', text: `✔ ${verb} complete` }
+        { type: 'result', text: `✔ ${verb} complete: ${linuxMsg}` }
       ])
-    }, 1500 + Math.random() * 1000)
+    }, 1200 + Math.random() * 800)
   }
 
-  // Auto-focus logic or global listener
   useEffect(() => {
     if (!isDesktop) return
     const handleGlobalKeyDown = (e) => {
-      // Ignore if user is typing in another input
       if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA') return
       handleKeyDown(e)
     }
@@ -90,7 +129,6 @@ export default function Terminal() {
         <span className="p-term-title">madhosh ~ whoami</span>
       </div>
       <div className="p-term-body">
-        {/* Static Profile Data */}
         <div className="p-term-line tl-1"><span className="t-prompt">$</span><span className="t-cmd"> cat profile.json</span></div>
         <div className="p-term-line t-out tl-2"><span className="t-key">cloud</span><span className="t-val">AWS · Azure · GCP</span></div>
         <div className="p-term-line t-out tl-3"><span className="t-key">iac</span><span className="t-val">Terraform . Terraform Cloud . Ansible</span></div>
@@ -101,7 +139,6 @@ export default function Terminal() {
         <div className="p-term-line t-out tl-8"><span className="t-key">self-hosted</span><span className="t-val">GitLab on personal hardware</span></div>
         <div className="p-term-line t-out tl-9"><span className="t-key">status</span><span className="t-green">open to new work ✓</span></div>
 
-        {/* Interactive History */}
         {history.map((item, i) => (
           <div key={i} className={`p-term-line ${item.type === 'result' ? 't-out' : ''}`}>
             <span className="t-prompt">{item.type === 'cmd' ? '$' : ''}</span>
@@ -109,7 +146,6 @@ export default function Terminal() {
           </div>
         ))}
 
-        {/* Current Spinner */}
         {isProcessing && (
           <div className="p-term-line t-out">
             <span className="t-accent">{SPINNER_CHARS[spinnerIdx]}</span>
@@ -117,7 +153,6 @@ export default function Terminal() {
           </div>
         )}
 
-        {/* Prompt */}
         {!isProcessing && isDesktop && (
           <div className="p-term-line">
             <span className="t-prompt">$</span>
@@ -126,7 +161,6 @@ export default function Terminal() {
           </div>
         )}
 
-        {/* Placeholder for non-desktop */}
         {!isDesktop && (
           <div className="p-term-line tl-10">
             <span className="t-prompt">$</span>
