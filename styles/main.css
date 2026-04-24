@@ -596,13 +596,34 @@ details.p-work-item[open] .p-work-chevron {
   transform: translateY(-4px);
 }
 
-.p-skill-label, .p-focus-title {
+.p-skill-label {
   font-size: 13px;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.12em;
   color: var(--accent);
   margin-bottom: 20px;
+}
+
+.p-focus-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.p-focus-title {
+  font-size: 13px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--accent);
+}
+
+.p-focus-icon {
+  font-size: 13px;
+  color: var(--accent);
+  line-height: 1;
 }
 
 .p-skill-tags {
@@ -631,11 +652,6 @@ details.p-work-item[open] .p-work-chevron {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   gap: 24px;
-}
-
-.p-focus-icon {
-  font-size: 24px;
-  margin-bottom: 16px;
 }
 
 .p-focus-desc {
@@ -679,7 +695,7 @@ details.p-work-item[open] .p-work-chevron {
   line-height: 1.6;
 }
 
-.p-footer-links { display: flex; gap: 28px; }
+.p-footer-links { display: flex; gap: 28px; align-items: center; }
 
 .p-footer-links a {
   font-family: 'Inter', sans-serif;
@@ -692,6 +708,29 @@ details.p-work-item[open] .p-work-chevron {
 
 .p-footer-links a:hover {
   color: var(--accent);
+}
+
+.p-go-top {
+  background: var(--bg3);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 8px 16px;
+  font-size: 13px;
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  color: var(--text-dim);
+  cursor: pointer;
+  transition: all 0.2s;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.p-go-top:hover {
+  background: var(--bg2);
+  border-color: var(--accent-bdr);
+  color: var(--accent);
+  transform: translateY(-2px);
 }
 
 /* ═══════════════════════════════════════
@@ -709,6 +748,22 @@ details.p-work-item[open] .p-work-chevron {
 /* ═══════════════════════════════════════
    RESPONSIVE - TABLET
 ═══════════════════════════════════════ */
+@media (max-width: 900px) {
+  .p-hero {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  
+  .p-hero-left {
+    max-width: 100%;
+  }
+
+  .p-terminal {
+    max-width: 600px;
+    margin-left: 0;
+  }
+}
+
 @media (max-width: 720px) {
   .p-hero {
     grid-template-columns: 1fr;

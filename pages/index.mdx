@@ -276,33 +276,45 @@ import WorkItem from '../components/WorkItem'
   </div>
   <div className="p-focus-grid">
     <div className="p-focus-card">
-      <div className="p-focus-icon">⚙</div>
-      <div className="p-focus-title">Automation over manual</div>
+      <div className="p-focus-header">
+        <span className="p-focus-icon">⚙</span>
+        <div className="p-focus-title">Automation over manual</div>
+      </div>
       <div className="p-focus-desc">If something is done twice, it gets scripted. VPN setup, snapshot workflows, broken machine recovery - all automated.</div>
     </div>
     <div className="p-focus-card">
-      <div className="p-focus-icon">$</div>
-      <div className="p-focus-title">Cost-aware decisions</div>
+      <div className="p-focus-header">
+        <span className="p-focus-icon">$</span>
+        <div className="p-focus-title">Cost-aware decisions</div>
+      </div>
       <div className="p-focus-desc">Every solution includes a cost analysis. I have excluded approaches specifically because they could not justify their bill.</div>
     </div>
     <div className="p-focus-card">
-      <div className="p-focus-icon">✎</div>
-      <div className="p-focus-title">Documentation that holds up</div>
+      <div className="p-focus-header">
+        <span className="p-focus-icon">✎</span>
+        <div className="p-focus-title">Documentation that holds up</div>
+      </div>
       <div className="p-focus-desc">I write docs people actually use. When the old guide does not cut it, I rewrite it from scratch. KTs with no gaps.</div>
     </div>
     <div className="p-focus-card">
-      <div className="p-focus-icon">♻</div>
-      <div className="p-focus-title">Self-healing infrastructure</div>
+      <div className="p-focus-header">
+        <span className="p-focus-icon">♻</span>
+        <div className="p-focus-title">Self-healing infrastructure</div>
+      </div>
       <div className="p-focus-desc">DR that triggers on its own. Pipelines that recover. Monitoring that acts, not just alerts.</div>
     </div>
     <div className="p-focus-card">
-      <div className="p-focus-icon">🔒</div>
-      <div className="p-focus-title">Security by default</div>
+      <div className="p-focus-header">
+        <span className="p-focus-icon">🔒</span>
+        <div className="p-focus-title">Security by default</div>
+      </div>
       <div className="p-focus-desc">IAM audits, SSH keys replacing tokens, Terraform removing config drift. Not a separate phase - the default.</div>
     </div>
     <div className="p-focus-card">
-      <div className="p-focus-icon">→</div>
-      <div className="p-focus-title">Clean handovers</div>
+      <div className="p-focus-header">
+        <span className="p-focus-icon">→</span>
+        <div className="p-focus-title">Clean handovers</div>
+      </div>
       <div className="p-focus-desc">Systems should be understandable by whoever comes next. Architecture docs, runbooks, annotated Terraform - all part of the job.</div>
     </div>
   </div>
@@ -329,6 +341,9 @@ import WorkItem from '../components/WorkItem'
     <a href="https://github.com/MadhoshYagnik" target="_blank">GitHub ↗</a>
     <a href="https://www.linkedin.com/in/madhosh/" target="_blank">LinkedIn ↗</a>
     <a href="https://gitlab.madhoshyagnik.space" target="_blank">GitLab ↗</a>
+    <button onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })} className="p-go-top">
+      ↑ Top
+    </button>
   </div>
 </div>
 
