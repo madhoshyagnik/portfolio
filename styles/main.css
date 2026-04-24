@@ -3,7 +3,7 @@
 /* ═══════════════════════════════════════
    LIGHT THEME (default)
 ═══════════════════════════════════════ */
-#theme-root.theme-light {
+:root {
   --bg:          #f4f5f8;
   --bg2:         #ffffff;
   --bg3:         #edf0f5;
@@ -33,7 +33,7 @@
 /* ═══════════════════════════════════════
    DARK THEME
 ═══════════════════════════════════════ */
-#theme-root.theme-dark {
+.dark {
   --bg:          #0d1117;
   --bg2:         #161b24;
   --bg3:         #1c2333;
@@ -60,7 +60,7 @@
   --glow:        0 0 0 3px rgba(77,156,248,0.12);
 }
 
-#theme-root.theme-dark .p-infra-link {
+.dark .p-infra-link {
   color: #8ab4ff !important;
   opacity: 1 !important;
   font-weight: 500;
@@ -1036,6 +1036,6 @@ details.p-work-item[open] .p-work-body {
 ::-webkit-scrollbar-thumb { background: var(--border2, #c8cdd6); border-radius: 3px; }
 ::-webkit-scrollbar-thumb:hover { background: var(--text-mut); }
 
-#theme-root.theme-dark a.p-infra-link {
+.dark a.p-infra-link {
   color: #8ab4ff !important;
 }
