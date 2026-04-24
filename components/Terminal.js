@@ -41,6 +41,8 @@ export default function Terminal() {
         processCommand(input)
       }
       setInput('')
+    } else if (e.key === ' ') {
+      e.preventDefault() // Stop page scroll and don't add to input
     } else if (e.key === 'Backspace') {
       setInput((prev) => prev.slice(0, -1))
     } else if (e.key.length === 1) {
