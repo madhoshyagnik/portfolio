@@ -484,15 +484,19 @@ details.p-work-item[open] .p-work-name {
 .tag-anon  { background: var(--bg3); color: var(--text-mut); border: 1px solid var(--border); }
 
 .p-work-chevron {
-  font-size: 18px;
+  font-size: 20px;
   color: var(--text-mut);
   transition: transform 0.3s;
+  text-shadow: none !important;
+  box-shadow: none !important;
 }
 
 details.p-work-item[open] .p-work-chevron {
   transform: rotate(90deg);
   color: var(--accent);
+  text-shadow: none !important;
 }
+
 
 .p-work-body-inner {
   padding: 0 24px 24px 64px;
