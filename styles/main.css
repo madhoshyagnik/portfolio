@@ -692,6 +692,21 @@ details.p-work-item[open] .p-work-chevron {
   opacity: 0.5;
 }
 
+.p-infra-status-note {
+  font-size: 11px;
+  font-weight: 500;
+  text-transform: lowercase;
+  letter-spacing: 0.05em;
+  color: var(--text-mut);
+  opacity: 0.8;
+  font-family: 'JetBrains Mono', monospace;
+  background: var(--bg3);
+  padding: 2px 8px;
+  border-radius: 4px;
+  margin-left: 8px;
+  vertical-align: middle;
+}
+
 @keyframes pulse-green {
   0%, 100% { opacity: 1; transform: scale(1); box-shadow: 0 0 10px var(--green); }
   50% { opacity: 0.8; transform: scale(0.9); box-shadow: 0 0 4px var(--green); }
