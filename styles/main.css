@@ -693,19 +693,18 @@ details.p-work-item[open] .p-work-chevron {
 }
 
 .p-infra-status-note {
-  font-size: 10px;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  color: var(--accent);
-  background: var(--accent-dim);
-  border: 1px solid var(--accent-bdr);
-  padding: 2px 8px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 9px;
+  font-weight: 500;
+  color: var(--text-mut);
+  background: var(--bg3);
+  border: 1px solid var(--border);
+  padding: 2px 6px;
   border-radius: 4px;
-  margin-left: 10px;
+  margin-left: 8px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
   vertical-align: middle;
-  display: inline-flex;
-  align-items: center;
 }
 
 @keyframes pulse-green {
